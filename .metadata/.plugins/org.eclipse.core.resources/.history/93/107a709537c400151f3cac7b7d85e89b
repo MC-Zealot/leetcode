@@ -1,0 +1,11 @@
+package com.leetCode._2th;
+/**
+ * Given a binary tree, find its minimum depth.
+
+The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
+ * @author Zealot
+ * @date 2016年1月26日 下午10:17:36
+ */
+public class MinimumDepthofBinaryTree {
+
+}

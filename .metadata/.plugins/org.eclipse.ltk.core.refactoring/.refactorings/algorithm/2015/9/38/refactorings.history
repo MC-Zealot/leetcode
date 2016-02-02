@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;sign&apos; in &apos;com.leetCode.TrappingRainWater.trap(...)&apos; to &apos;left&apos;&#x0A;- Original project: &apos;algorithm&apos;&#x0A;- Original element: &apos;com.leetCode.TrappingRainWater.trap(int[]).sign&apos;&#x0A;- Renamed element: &apos;sign&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;sign&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;com.leetCode{TrappingRainWater.java[TrappingRainWater~trap~\[I@sign!760!773!764!767!I!0!false" name="left" references="true" stamp="1442238119887" version="1.0"/>
+</session>
