@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename local variable &apos;firstDigit&apos; in &apos;com.leetCode.PlusOne.plusOne(...)&apos; to &apos;lastDigit&apos;&#x0A;- Original project: &apos;algorithm&apos;&#x0A;- Original element: &apos;com.leetCode.PlusOne.plusOne(int[]).firstDigit&apos;&#x0A;- Renamed element: &apos;firstDigit&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;firstDigit&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;com.leetCode{PlusOne.java[PlusOne~plusOne~\[I@firstDigit!317!357!321!330!I!0!false" name="lastDigit" references="true" stamp="1441637008148" version="1.0"/>
-</session>
