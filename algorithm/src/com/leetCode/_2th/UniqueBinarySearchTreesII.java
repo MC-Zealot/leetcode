@@ -18,6 +18,12 @@ Given n = 3, your program should return all 5 unique BST's shown below.
 3     2     1      1   3      2
 /     /       \                 \
 2     1         2                 3
+如果from 大于 to ，那么放一个null 作为空树
+否则  求以 i[from,to] 为根节点的所有树
+先确定一个i  那么就能求以这个i为root的所有左右子树集合。
+剩下的不就是组装根节点了么
+递归的退出条件就是from 大于 to   ，会产生一个空树List
+2层求所有组合
  * @author Zealot
  * @date 2016年2月15日 下午12:26:22
  *
