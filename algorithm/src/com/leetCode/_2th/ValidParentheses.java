@@ -22,7 +22,7 @@ public class ValidParentheses {
 		boolean flag = false;
 		while(s.length()!=0) {
 			char[] ss = s.toCharArray();
-			for(int i = 0; i < s.length() - 1;) {
+			for(int i = 0; i < s.length() - 1;i++) {
 				if(map.containsKey(ss[i])&&map.get(ss[i])==ss[i+1]){
 					String last = "";
 					if(i+2<s.length()){
@@ -31,8 +31,6 @@ public class ValidParentheses {
 					s = s.substring(0, i) + last;
 					flag = true;
 					break;
-				}else{
-					i++;
 				}
 			}
 			if(flag ==false){
@@ -41,9 +39,5 @@ public class ValidParentheses {
 			flag = false;
 		}
 		return true;
-	}
-	public static void main(String[] args) {
-		ValidParentheses v = new ValidParentheses();
-		System.out.println(v.isValid("(())"));
 	}
 }
