@@ -6,11 +6,11 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
-Given a collection of numbers, return all possible permutations.
+ Given a collection of numbers, return all possible permutations.
 
-For example,
-[1,2,3] have the following permutations:
-[1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], and [3,2,1].
+ For example,
+ [1,2,3] have the following permutations:
+ [1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], and [3,2,1].
  * @author Zealot
  * @date 2015年8月25日 下午9:11:25
  */
@@ -41,6 +41,38 @@ public class Permutations {
 				lli.addAll(sublist);
 			}
 			return lli;
+		}
+	}
+	/**
+	 *
+	 * @date 2016年2月27日 下午9:10:40
+	 * @param num
+	 * @return
+	 */
+	public ArrayList<ArrayList<Integer>> permute2(int[] num) {
+		ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
+		if(num==null || num.length==0)
+			return res;
+		helper(num, new boolean[num.length], new ArrayList<Integer>(), res);
+		return res;
+	}
+	private void helper(int[] num, boolean[] used, ArrayList<Integer> item, ArrayList<ArrayList<Integer>> res)
+	{
+		if(item.size() == num.length)
+		{
+			res.add(new ArrayList<Integer>(item));
+			return;
+		}
+		for(int i=0;i<num.length;i++)
+		{
+			if(!used[i])
+			{
+				used[i] = true;
+				item.add(num[i]);
+				helper(num, used, item, res);
+				item.remove(item.size()-1);
+				used[i] = false;
+			}
 		}
 	}
 	public static void main(String[] args) {
