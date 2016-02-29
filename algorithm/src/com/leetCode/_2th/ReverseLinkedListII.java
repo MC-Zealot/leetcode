@@ -45,6 +45,37 @@ public class ReverseLinkedListII {
 		}
 		return dummy.next;
 	}
+	public ListNode reverseBetween2(ListNode head, int m, int n) {
+		if(head==null){
+			return null;
+		}
+
+		ListNode dummy =  new ListNode(0);
+		dummy.next = head;
+		ListNode p = head;
+		ListNode pre = new ListNode(-1);
+		pre.next = p;
+		int index = 1;
+		while(p!=null&&index<m){
+			index++;
+			p = p.next;
+			pre = pre.next;
+		}
+		if(index < m){
+			return head;
+		}
+		while(p.next!=null && index <n){
+			ListNode tmp = new ListNode(p.next.val);
+			tmp.next = pre.next;
+			pre.next = tmp;//插入
+			p.next = p.next.next;//删掉
+			index++;
+		}
+		if(m==1){
+			dummy.next = pre.next;
+		}
+		return dummy.next;
+	}
 
 	public static void main(String[] args) {
 		ListNode l1 = new ListNode(1);
@@ -58,6 +89,11 @@ public class ReverseLinkedListII {
 		l4.next = l5;
 		ReverseLinkedListII r = new ReverseLinkedListII();
 		// r.reverse(l1);
-		r.reverseBetween(l1, 2, 4);
+		ListNode head = r.reverseBetween2(l1, 2, 4);
+		while(head!=null){
+			System.out.print(" "+head.val);
+			head = head.next;
+		}
+		System.out.println();
 	}
 }
