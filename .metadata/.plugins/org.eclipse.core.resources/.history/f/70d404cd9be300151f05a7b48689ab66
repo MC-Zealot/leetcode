@@ -1,0 +1,36 @@
+package com.leetCode._2th;
+
+import java.util.List;
+
+/**
+ * The set [1,2,3,…,n] contains a total of n! unique permutations.
+
+By listing and labeling all of the permutations in order,
+We get the following sequence (ie, for n = 3):
+
+"123"
+"132"
+"213"
+"231"
+"312"
+"321"
+Given n and k, return the kth permutation sequence.
+ * 
+ * @author Zealot
+ * @date 2016年3月6日 下午9:00:57 
+ *
+ */
+public class PermutationSequence {
+	String res = "";
+	public String getPermutation(int n, int k) {
+		if(n<=0||k<0){
+			return res;
+		}
+		boolean[] a = new boolean[n];
+		
+		return res;
+    }
+	private void backtracing(int n, int k, boolean[] a, int cur, List<Integer> list) {
+		
+	}
+}

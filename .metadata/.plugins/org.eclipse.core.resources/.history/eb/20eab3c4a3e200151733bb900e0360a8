@@ -1,0 +1,72 @@
+package com.leetCode._2th;
+
+import com.leetCode.CommonStructure.ListNode;
+/**
+ * 
+ * 
+ * @author Zealot
+ * @date 2016年3月5日 下午3:04:23 
+ *
+ */
+public class RemoveDuplicatesfromSortedListII {
+	public ListNode deleteDuplicates(ListNode head) {
+		ListNode p = head;
+		ListNode pre = new ListNode(-1);
+		ListNode dummy = pre;
+		pre.next = head;
+		ListNode tmp = new ListNode(-1);
+		
+		while(p!=null){
+			if(tmp.val!=p.val){
+				pre.next = p;
+			}
+			p = p.next;
+			tmp = p;
+		}
+		
+		return dummy.next;
+    }
+	public ListNode deleteDuplicates2(ListNode head) {
+	    if(head==null){
+	    	return null;
+	    }
+	    ListNode node = head;
+	    ListNode dummy = new ListNode(-1);
+	    dummy.next = head;
+	    ListNode res = dummy;
+	    while(node.next!=null){
+	    	if(dummy.next.val==dummy.next.next.val){
+	    		if(dummy.next.next.next==null){
+	    			dummy.next.next=null;
+	    			break;
+	    		}
+	    		dummy.next = dummy.next.next.next;
+	    		continue;
+	    	}
+	    	dummy = dummy.next;
+	    	node = node.next;
+	    }
+		return res.next;
+    }
+	public static void main(String[] args) {
+		ListNode l1 = new ListNode(1);
+		ListNode l2 = new ListNode(1);
+		ListNode l3 = new ListNode(1);
+		ListNode l4 = new ListNode(2);
+		ListNode l5 = new ListNode(2);
+		ListNode l6 = new ListNode(3);
+		ListNode l7 = new ListNode(4);
+		l1.next =l2;
+		l2.next = l3;
+		l3.next = l4;
+		l4.next = l5;
+		l5.next = l6;
+		l6.next = l7;
+		RemoveDuplicatesfromSortedListII r = new RemoveDuplicatesfromSortedListII();
+		ListNode p = r.deleteDuplicates2(l1);
+		while(p!=null){
+			System.out.println(p.val);
+			p = p.next;
+		}
+	}
+}

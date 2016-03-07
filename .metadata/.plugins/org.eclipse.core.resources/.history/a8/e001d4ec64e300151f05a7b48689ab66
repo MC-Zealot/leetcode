@@ -1,0 +1,39 @@
+package com.leetCode._2th;
+/**
+ * Implement int sqrt(int x).
+
+Compute and return the square root of x.
+ * 
+ * @author Zealot
+ * @date 2016年3月5日 下午3:53:24 
+ *
+ */
+public class Sqrtx {
+	public int mySqrt(int x) {
+		if(x<=0){
+			return 0;
+		}
+		int i  = 1;
+		for(; i*i<=x;){
+			i++;
+		}
+		return --i;
+    }
+	public int mySqrt(int x) {int sqrt(int x) {
+		 2     long long i = 0;
+		 3     long long j = x / 2 + 1;
+		 4     while (i <= j)
+		 5     {
+		 6         long long mid = (i + j) / 2;
+		 7         long long sq = mid * mid;
+		 8         if (sq == x) return mid;
+		 9         else if (sq < x) i = mid + 1;
+		10         else j = mid - 1;
+		11     }
+		12     return j;
+		13 }}
+	public static void main(String[] args) {
+		Sqrtx x = new Sqrtx();
+		System.out.println(x.mySqrt(100));
+	}
+}

@@ -1,0 +1,53 @@
+package com.leetCode._2th;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.leetCode.CommonStructure.TreeNode;
+
+/**
+ * Given a binary tree, return all root-to-leaf paths.
+
+For example, given the following binary tree:
+
+   1
+ /   \
+2     3
+ \
+  5
+All root-to-leaf paths are:
+
+["1->2->5", "1->3"]
+ * 
+ * @author Zealot
+ * @date 2016年2月29日 下午9:35:09 
+ *
+ */
+public class BinaryTreePaths {
+	public List<String> binaryTreePaths(TreeNode root) {
+		List<String> res = new ArrayList<String>();
+		if(root==null){
+			return res;
+		}
+		
+        return res;
+    }
+	private void bl(TreeNode root,List<String> res, String tmp) {
+		if(root==null){
+			return;
+		}
+		if(root.left!=null){
+			tmp = tmp + "->"+root.left.val;
+			bl(root.left, res, tmp);
+		}
+		if(root.right!=null){
+			tmp = tmp + "->" + root.right.val;
+			bl(root.right, res, tmp);
+		}
+		if(root.left==null && root.right ==null){
+			res.add(tmp);
+		}else{
+			
+		}
+	}
+}
