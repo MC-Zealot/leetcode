@@ -53,8 +53,8 @@ public class CombinationSumII {
 	}
 	public static void main(String[] args) {
 		CombinationSumII c = new CombinationSumII();
-		int[] candidates = {1,2,2};
-		int target = 3;
+		int[] candidates = {1, 0, 1, 2,-1, -4};
+		int target = 0;
 		List<List<Integer>> res = c.combinationSum2(candidates, target);
 		for(List<Integer> list: res){
 			System.out.println(list.toString());

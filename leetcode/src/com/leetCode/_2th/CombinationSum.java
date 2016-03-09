@@ -36,7 +36,7 @@ public class CombinationSum {
 	    	}else if(target>sum){
 	    		for(int i = cur; i < candidates.length ; i++) {
 	    			tmp.add(candidates[i]);
-	    			dfs(i , sum + candidates[i], candidates, target);//因为每一个值可以重复，所以cur不用++
+	    			dfs(i , sum + candidates[i], candidates, target);//因为每一个值可以重复，所以i不用++
 	    			tmp.remove(tmp.size()-1);
 	    		}
 	    	}
