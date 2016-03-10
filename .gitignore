@@ -15,8 +15,8 @@ hs_err_pid*
 .metadata/
 .recommenders/
 .settings
-#.classpath
-bin/
+.classpath
 /algorithm/bin/
-
+.project
+.idea
 
