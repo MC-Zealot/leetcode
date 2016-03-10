@@ -30,7 +30,7 @@ public class ReverseInteger {
 		int res = 0;
 		try{
 
-			res = Integer.parseInt(sb.toString());
+			res = Integer.parseInt(sb.toString());//整数越界
 		}catch(Exception e){
 			return res;
 		}
@@ -51,7 +51,7 @@ public class ReverseInteger {
 		while (x != 0) {
 			int tail = x % 10;
 			int newResult = result * 10 + tail;
-			if ((newResult - tail) / 10 != result) {
+			if ((newResult - tail) / 10 != result) {//如果越界，则不会相等
 				return 0;
 			}
 			result = newResult;

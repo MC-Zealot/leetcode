@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="/Users/Zealot/Documents/MyWorkSpace/lc/leetcode/.git" key="GitSelectRepositoryPage.lastRepository"/>
+	<item value="/Users/Zealot/Documents/MyWorkSpace/.git" key="GitSelectRepositoryPage.lastRepository"/>
 	<item value="0" key="org.eclipse.egit.ui.internal.clone.GitSelectWizardPageWizardSel"/>
 	<list key="RepositorySelectionPage.UsedUris">
 		<item value="https://github.com/MC-Zealot/leetcode.git"/>
@@ -10,5 +10,19 @@
 	</list>
 	<section name="GitImportWizard">
 		<item value="false" key="GitProjectsImportPage.STORE_NESTED_PROJECTS"/>
+	</section>
+	<section name="org.eclipse.egit.ui.COMMIT_DIALOG_SECTION">
+		<item value="626" key="DIALOG_WIDTH"/>
+		<item value="0" key="DIALOG_Y_ORIGIN"/>
+		<item value="623" key="DIALOG_HEIGHT"/>
+		<item value="327" key="DIALOG_X_ORIGIN"/>
+		<item value="1|.SF NS Text|11.0|0|COCOA|1|.SFNSText-Regular" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.pull.PullResultDialog.dialogBounds">
+		<item value="651" key="DIALOG_WIDTH"/>
+		<item value="260" key="DIALOG_Y_ORIGIN"/>
+		<item value="283" key="DIALOG_HEIGHT"/>
+		<item value="489" key="DIALOG_X_ORIGIN"/>
+		<item value="1|.SF NS Text|11.0|0|COCOA|1|.SFNSText-Regular" key="DIALOG_FONT_NAME"/>
 	</section>
 </section>

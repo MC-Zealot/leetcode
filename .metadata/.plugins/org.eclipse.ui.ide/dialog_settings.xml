@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">
-		<item value="false" key="ShowDerived"/>
 		<item value="true" key="ShowStatusLine"/>
+		<item value="false" key="ShowDerived"/>
 		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;" key="WorkingSet"/>
-		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History&gt;&#x0A;&lt;historyRootNode&gt;&#x0A;&lt;infoNode path=&quot;/test/src/com/leetCode/_1th/ConvertSortedArraytoBinarySearchTree.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/test/src/com/leetCode/_2th/HouseRobber.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/test/src/com/leetCode/_1th/UniquePaths.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/test/src/com/leetCode/_1th/UniqueBinarySearchTrees.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/test/src/com/leetCode/_1th/LowestCommonAncestorofaBinarySearchTree_235.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/test/src/com/leetCode/_1th/BinaryTreeLevelOrderTraversalII.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/test/src/com/leetCode/_1th/MajorityElement_169.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/test/src/com/leetCode/_1th/ReverseLinkedList.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/test/src/com/leetCode/_2th/PowerofThree.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/test/src/com/leetCode/_1th/RemoveDuplicatesfromSortedList_83.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/test/src/com/leetCode/_1th/Permutations.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/test/src/com/leetCode/_2th/NextPermutation.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/test/src/com/leetCode/_2th/PermutationsII.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;/historyRootNode&gt;&#x0A;&lt;/History&gt;" key="History"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History&gt;&#x0A;&lt;historyRootNode&gt;&#x0A;&lt;infoNode path=&quot;/leetcode/src/com/leetCode/_2th/CombinationSum.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;/historyRootNode&gt;&#x0A;&lt;/History&gt;" key="History"/>
 		<section name="DialogBoundsSettings">
 			<item value="600" key="DIALOG_WIDTH"/>
 			<item value="67" key="DIALOG_Y_ORIGIN"/>
-			<item value="340" key="DIALOG_X_ORIGIN"/>
 			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="340" key="DIALOG_X_ORIGIN"/>
 			<item value="1|.SF NS Text|11.0|0|COCOA|1|.SFNSText-Regular" key="DIALOG_FONT_NAME"/>
 		</section>
 	</section>
