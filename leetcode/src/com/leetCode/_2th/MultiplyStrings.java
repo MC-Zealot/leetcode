@@ -41,7 +41,6 @@ public class MultiplyStrings {
 		String res = "0";
 		for(int i = 0; i < b; i++) {
 			res = addNumbers(res, num1);
-//			System.out.println(res);
 		}
 		return res;
 	}
@@ -104,27 +103,30 @@ public class MultiplyStrings {
 		return b;
 	}
 	public String multiply3(String num1, String num2) {  
-		if (num1 == null || num2 == null || num1.length() == 0 || num2.length() == 0)
+		if (num1 == null || num2 == null || num1.length() == 0 || num2.length() == 0){
 			return "";
-		if (num1.charAt(0) == '0')
+		}
+		if (num1.charAt(0) == '0'){
 			return "0";
-		if (num2.charAt(0) == '0')
+		}
+		if (num2.charAt(0) == '0'){
 			return "0";
+		}
 		StringBuilder res = new StringBuilder();
 		int num = 0;
 		for (int i = num1.length() + num2.length(); i > 0; i--) {
-			for (int j = Math.min(i - 1, num1.length()); j > 0; j--) {
-				if (i - j <= num2.length()) {
-					num += (int) (num1.charAt(j - 1) - '0')
-							* (int) (num2.charAt(i - 1 - j) - '0');
+			for (int j = Math.min(i - 1, num1.length()); j > 0; j--) {//num1的长度
+				if (i - j <= num2.length()) {//总长度减去num1的长度，不能大于nums2的长度
+					num += (int) (num1.charAt(j - 1) - '0')	* (int) (num2.charAt(i - 1 - j) - '0');//num1的位*对应num2的位
 				}
 			}
-			if (i != 1 || num > 0)
+			if (i != 1 || num > 0){
 				res.append(num % 10);
+			}
 			num = num / 10;
 		}
 	    return res.reverse().toString();  
-	}  
+	}
 	public static void main(String[] args) {
 		MultiplyStrings m = new MultiplyStrings();
 		System.out.println(m.multiply2("10", "16"));
