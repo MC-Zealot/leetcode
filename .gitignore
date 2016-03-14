@@ -13,7 +13,7 @@ gen
 target/
 
 ### Eclipse template
-.metadata
+.metadata/
 bin/
 tmp/
 *.tmp
@@ -26,3 +26,6 @@ tmp/
 
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+*.xmi
+*.index
+*.resources
