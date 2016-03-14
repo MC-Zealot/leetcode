@@ -6,7 +6,6 @@
 <fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.lang.Character"/>
 <fullyQualifiedTypeName name="com.leetCode._2th.ReverseBits"/>
 <fullyQualifiedTypeName name="sun.org.mozilla.javascript.internal.Node"/>
 <fullyQualifiedTypeName name="com.leetCode.CommonStructure.TreeNode"/>
@@ -19,4 +18,5 @@
 <fullyQualifiedTypeName name="com.leetCode._2th.MultiplyStrings"/>
 <fullyQualifiedTypeName name="com.leetCode._2th.StringtoIntegeratoi"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.lang.Character"/>
 </qualifiedTypeNameHistroy>
