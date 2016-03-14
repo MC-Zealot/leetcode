@@ -1,7 +1,5 @@
 package com.leetCode._2th;
 
-import java.util.Stack;
-
 import com.leetCode.CommonStructure.ListNode;
 
 /**
