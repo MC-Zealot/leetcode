@@ -22,10 +22,12 @@ word = "ABCB", -> returns false.
  */
 public class WordSearch {
 	public boolean exist(char[][] board, String word) {
-		if (word == null || word.length() == 0)
+		if (word == null || word.length() == 0){
 			return true;
-		if (board == null || board.length == 0 || board[0].length == 0)
+		}
+		if (board == null || board.length == 0 || board[0].length == 0){
 			return false;
+		}
 		boolean[][] used = new boolean[board.length][board[0].length];
 		for (int i = 0; i < board.length; i++) {
 			for (int j = 0; j < board[0].length; j++) {
@@ -37,8 +39,7 @@ public class WordSearch {
 		return false;
 	}
 
-	private boolean search(char[][] board, String word, int index, int i,
-			int j, boolean[][] used) {
+	private boolean search(char[][] board, String word, int index, int i, int j, boolean[][] used) {
 		if (index == word.length()){
 			return true;
 		}
