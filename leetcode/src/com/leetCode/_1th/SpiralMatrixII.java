@@ -26,6 +26,13 @@ You should return the following matrix:
  * @date 2015年8月24日 下午7:54:43
  */
 public class SpiralMatrixII {
+	/**
+	 * 又做了一遍
+	 * 细节
+	 * @date 2016年3月20日 下午4:50:34
+	 * @param n
+	 * @return
+	 */
 	public int[][] generateMatrix(int n) {
 		int[][] res = new int[n][n];
 		int num = 1;
