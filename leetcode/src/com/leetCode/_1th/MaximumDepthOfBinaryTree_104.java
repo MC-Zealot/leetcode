@@ -41,7 +41,7 @@ public class MaximumDepthOfBinaryTree_104 {
 			return 0;
 		}
 		
-		return 1+ Math.max(maxDepth(root.left), maxDepth(root.right));
+		return 1+ Math.max(maxDepth2(root.left), maxDepth2(root.right));
 	}
 	public static void main(String[] args) {
 		MaximumDepthOfBinaryTree_104 m = new MaximumDepthOfBinaryTree_104();
