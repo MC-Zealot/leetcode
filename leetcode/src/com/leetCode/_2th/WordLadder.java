@@ -27,18 +27,17 @@ All words contain only lowercase alphabetic characters.
  * @date 2016年3月19日 下午4:23:00 
  *
  */
-public class WordLadder {
-	class WordNode{
-	    String word;
-	    int numSteps;
-	 
-	    public WordNode(String word, int numSteps){
-	        this.word = word;
-	        this.numSteps = numSteps;
-	    }
+class WordNode{
+	String word;
+	int numSteps;
+	
+	public WordNode(String word, int numSteps){
+		this.word = word;
+		this.numSteps = numSteps;
 	}
+}
+public class WordLadder {
 	 
-	public class Solution {
 	    public int ladderLength(String beginWord, String endWord, Set<String> wordDict) {
 	        LinkedList<WordNode> queue = new LinkedList<WordNode>();
 	        queue.add(new WordNode(beginWord, 1));
@@ -74,5 +73,4 @@ public class WordLadder {
 	 
 	        return 0;
 	    }
-	}
 }
