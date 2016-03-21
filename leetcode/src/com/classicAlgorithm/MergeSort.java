@@ -40,15 +40,10 @@ public class MergeSort {
 		}
 	}
 
-	boolean mergeSort(int a[], int n) {
-		int[] p = new int[n];
-		mergesort(a, 0, n - 1, p);
-		return true;
-	}
 	public static void main(String[] args) {
 		int[] a = {1,4,6,7,23,3,5,8,12,11};
 		MergeSort ms = new MergeSort();
-		ms.mergeSort(a, a.length);
+		ms.mergesort(a, 0, a.length - 1, new int[a.length]);
 		for(int i = 0; i < a.length; i++) {
 			System.out.print(a[i] + "\t");
 		}
