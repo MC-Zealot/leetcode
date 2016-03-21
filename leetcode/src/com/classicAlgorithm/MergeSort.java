@@ -21,14 +21,17 @@ public class MergeSort {
 				temp[k++] = a[j++];
 		}
 
-		while (i <= m)
+		while (i <= m){
 			temp[k++] = a[i++];
+		}
 
-		while (j <= n)
+		while (j <= n){
 			temp[k++] = a[j++];
+		}
 
-		for (i = 0; i < k; i++)
+		for (i = 0; i < k; i++){
 			a[first + i] = temp[i];
+		}
 	}
 
 	public void mergesort(int a[], int first, int last, int temp[]) {
