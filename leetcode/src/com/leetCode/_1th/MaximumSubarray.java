@@ -62,6 +62,24 @@ public class MaximumSubarray {
 		}
 		return reVal;
 	}
+	/**
+	 * dp
+	 * @date 2016年3月22日 下午11:03:08
+	 * @param A
+	 * @return
+	 */
+	public int maxSubArray4(int[] A) {  
+	    if(A==null || A.length==0)  
+	        return 0;  
+	    int global = A[0];  //全局最优
+	    int local = A[0];  //局部最优，一定要算上curr这个节点
+	    for(int i=1;i<A.length;i++)  
+	    {  
+	        local = Math.max(A[i],local+A[i]);  
+	        global = Math.max(local,global);  
+	    }  
+	    return global;  
+	}  
 	public static void main(String[] args) {
 		MaximumSubarray m = new MaximumSubarray();
 		int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
