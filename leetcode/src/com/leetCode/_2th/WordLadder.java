@@ -4,7 +4,8 @@ import java.util.LinkedList;
 import java.util.Set;
 
 /**
- * Given two words (beginWord and endWord), and a dictionary's word list, find the length of shortest transformation sequence from beginWord to endWord, such that:
+ * Given two words (beginWord and endWord), and a dictionary's word list, find the length of shortest transformation sequence from beginWord to endWord,
+ * such that:
 
 Only one letter can be changed at a time
 Each intermediate word must exist in the word list
@@ -51,7 +52,7 @@ public class WordLadder {
 	            if(word.equals(endWord)){
 	                return top.numSteps;
 	            }
-	 
+	            //word在wordDict里边，有没有只更改一个，就可以匹配到的。如果有，则加入到队列当中
 	            char[] arr = word.toCharArray();
 	            for(int i=0; i<arr.length; i++){
 	                for(char c='a'; c<='z'; c++){
@@ -63,7 +64,7 @@ public class WordLadder {
 	                    String newWord = new String(arr);
 	                    if(wordDict.contains(newWord)){
 	                        queue.add(new WordNode(newWord, top.numSteps+1));
-	                        wordDict.remove(newWord);
+	                        wordDict.remove(newWord);//?为什么要删除
 	                    }
 	 
 	                    arr[i]=temp;
