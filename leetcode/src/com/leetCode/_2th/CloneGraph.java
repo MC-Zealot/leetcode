@@ -3,6 +3,7 @@ package com.leetCode._2th;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import com.leetCode.CommonStructure.UndirectedGraphNode;
 
@@ -43,8 +44,7 @@ public class CloneGraph {
 		}
  
         LinkedList<UndirectedGraphNode> queue = new LinkedList<UndirectedGraphNode>();
-        HashMap<UndirectedGraphNode, UndirectedGraphNode> map = 
-                                   new HashMap<UndirectedGraphNode,UndirectedGraphNode>();
+        Map<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<UndirectedGraphNode,UndirectedGraphNode>();
  
         UndirectedGraphNode newHead = new UndirectedGraphNode(node.label);
  
