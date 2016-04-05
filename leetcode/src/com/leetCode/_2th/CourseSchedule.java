@@ -36,8 +36,9 @@ public class CourseSchedule {
 		for (int i = 0; i < prerequisites.length; i++) {
 			int ready = prerequisites[i][0];
 			int pre = prerequisites[i][1];
-			if (matrix[pre][ready] == 0)
+			if (matrix[pre][ready] == 0){
 				indegree[ready]++; // duplicate case
+			}
 			matrix[pre][ready] = 1;
 		}
 
