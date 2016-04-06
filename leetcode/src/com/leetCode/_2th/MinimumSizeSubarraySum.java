@@ -28,4 +28,39 @@ public class MinimumSizeSubarraySum {
 		}
 		return res == len + 1 ? 0 : res;
 	}
+	public int minSubArrayLen2(int s, int[] nums) {
+		if (nums.length == 0){
+			return 0;
+		}
+		int left = 0, right = 0, sum = 0, len = nums.length, res = len;
+		int sum2 = 0;
+		boolean flag = true;
+		for(int i = 0; i < nums.length; i++) {
+			sum2+=nums[i];
+			if(sum2>s){
+				flag = false;
+				break;
+			}
+		}
+		if(sum2==s&&flag){
+			return nums.length;
+		}
+		while (right <= len) {
+			if(sum < s&&right < len){
+				sum+=nums[right++];
+			}else if(sum>=s){
+				res = Math.min(right - left, res);
+				sum-=nums[left++];
+			}else{
+				return res == nums.length?0:res;
+			}
+		}
+		return res;
+	}
+	public static void main(String[] args) {
+		MinimumSizeSubarraySum m = new MinimumSizeSubarraySum();
+//		int[] a  = {2,3,1,2,4,3};
+		int[] a  = {1,4,4};
+		System.out.println(m.minSubArrayLen2(10, a));
+	}
 }
