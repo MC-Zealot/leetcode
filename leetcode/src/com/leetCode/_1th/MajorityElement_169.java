@@ -77,6 +77,7 @@ public class MajorityElement_169 {
 		return nums[size/2];
 	}
 	/**
+	 * 投票算法
 	 * 时间O(n)  空间O(1)
 	 * @date 2016年2月25日 下午10:05:27
 	 * @param nums
@@ -90,8 +91,8 @@ public class MajorityElement_169 {
 			if(c!=nums[i]){
 				if(t>0){
 					t--;
-				}else{
-					t++;
+				}else{//重新赋值
+					t = 1;
 					c = nums[i];
 				}
 			}else{
