@@ -25,7 +25,7 @@ Input: "2*3-4*5"
 (2*((3-4)*5)) = -10
 (((2*3)-4)*5) = 10
 Output: [-34, -14, -10, -10, 10]
-分治
+分而治之。对于输入字符串，若其中有运算符，则将其分为两部分，分别递归计算其值，然后将左值集合与右值集合进行交叉运算，将运算结果放入结果集中；若没有运算符，则直接将字符串转化为整型数放入结果集中。
  * 
  * @author Zealot
  * @date 2016年4月7日 上午10:03:09 
@@ -63,4 +63,9 @@ public class DifferentWaystoAddParentheses {
         }
         return ret;
     }
+	public static void main(String[] args) {
+		String s  = "2-1-1*3";
+		DifferentWaystoAddParentheses d = new DifferentWaystoAddParentheses();
+		System.out.println(d.diffWaysToCompute(s));
+	}
 }
