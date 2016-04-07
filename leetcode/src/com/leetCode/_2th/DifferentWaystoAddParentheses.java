@@ -1,6 +1,6 @@
 package com.leetCode._2th;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -32,40 +32,35 @@ Output: [-34, -14, -10, -10, 10]
  *
  */
 public class DifferentWaystoAddParentheses {
-	 public List<Integer> diffWaysToCompute(String input) {
-	        return helper(input);
-	    }
-
-	    public List<Integer> helper(String input) {
-	        int length = input.length();
-	        List<Integer> res = new ArrayList<>();
-	        for (int i = 0; i < length; i++) {
-	            char curc = input.charAt(i);
-	            if (Character.isDigit(curc)) {
-	                continue;
-	            }
-	            List<Integer> left = helper(input.substring(0, i));
-	            List<Integer> right = helper(input.substring(i + 1, length));
-	            merge(left, right, curc, res);
-	        }
-	        if (res.size() == 0) {
-	            res.add(Integer.parseInt(input));
-	        }
-	        return res;
-	    }
-
-	    public void merge(List<Integer> left, List<Integer> right, char op, List<Integer> resList) {
-	        int lengthLeft = left.size();
-	        int lengthRight = right.size();
-	        for (int i = 0; i < lengthLeft; i++) {
-	            for (int j = 0; j < lengthRight; j++) {
-	                int curRes = left.get(i);
-	                int curRight = right.get(j);
-	                if (op == '+') curRes += curRight;
-	                else if (op == '-') curRes -= curRight;
-	                else curRes *= curRight;
-	                resList.add(curRes);
-	            }
-	        }
-	    }
+	public List<Integer> diffWaysToCompute(String input) {
+        List<Integer> ret = new LinkedList<Integer>();
+        for (int i=0; i<input.length(); i++) {
+            if (input.charAt(i) == '-' ||
+                input.charAt(i) == '*' ||
+                input.charAt(i) == '+' ) {
+                String part1 = input.substring(0, i);
+                String part2 = input.substring(i+1);
+                List<Integer> part1Ret = diffWaysToCompute(part1);
+                List<Integer> part2Ret = diffWaysToCompute(part2);
+                for (Integer p1 :   part1Ret) {
+                    for (Integer p2 :   part2Ret) {
+                        int c = 0;
+                        switch (input.charAt(i)) {
+                            case '+': c = p1+p2;
+                                break;
+                            case '-': c = p1-p2;
+                                break;
+                            case '*': c = p1*p2;
+                                break;
+                        }
+                        ret.add(c);
+                    }
+                }
+            }
+        }
+        if (ret.size() == 0) {
+            ret.add(Integer.valueOf(input));
+        }
+        return ret;
+    }
 }
