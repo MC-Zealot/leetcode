@@ -42,6 +42,12 @@ public class UglyNumber {
 		String s = String.valueOf(d);
 		return s.substring(s.length()-2, s.length()).equals(".0");
 	}
+	/**
+	 * 
+	 * @date 2016年4月7日 下午9:46:22
+	 * @param num
+	 * @return
+	 */
 	public boolean isUgly2(int num) {
         if(num == 0){
             return false;
