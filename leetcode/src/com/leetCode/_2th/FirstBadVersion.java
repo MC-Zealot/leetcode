@@ -23,26 +23,31 @@ import com.util.VersionControl;
  */
 public class FirstBadVersion {
 	public int firstBadVersion(int n) {
-		 // write your code here
-        if (n == 1) {
-            return 1;
-        }
-        
-        int left = 1;
-        int right = n;
-        
-        while (left + 1 < right) {
-            int mid = left + (right - left) / 2;
-            if (VersionControl.isBadVersion(mid)) {
-                right = mid;
-            } else {
-                left = mid;
-            }
-        }
-        
-        if (VersionControl.isBadVersion(left)) {
-            return left;
-        }
-        
-        return right;    }
+		// write your code here
+		if (n == 1) {
+			return 1;
+		}
+
+		int left = 1;
+		int right = n;
+
+		while (left + 1 < right) {
+			int mid = left + (right - left) / 2;
+			if (VersionControl.isBadVersion(mid)) {
+				right = mid;
+			} else {
+				left = mid;
+			}
+		}
+
+		if (VersionControl.isBadVersion(left)) {
+			return left;
+		}
+
+		return right;
+	}
+	public static void main(String[] args) {
+		String str = "hello";
+		System.out.println(str.substring(0,1));
+	}
 }
