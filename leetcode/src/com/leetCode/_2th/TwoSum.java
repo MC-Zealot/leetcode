@@ -29,6 +29,14 @@ public class TwoSum {
 		backTracing(nums, target, 0, new ArrayList<Integer>());
 		return res;
     }
+	/**
+	 * 人家要的是index，不是value。时间复杂度O(n!)
+	 * @date 2016年4月17日 上午11:24:49
+	 * @param nums
+	 * @param target
+	 * @param cur
+	 * @param list
+	 */
 	private void backTracing(int[] nums, int target, int cur, List<Integer> list) {
 		if(list.size()==2){
 			int sum = list.get(0)+list.get(1);
@@ -82,7 +90,7 @@ public class TwoSum {
 	public static void main(String[] args) {
 		int[] a = {2,1,9,4,4,56,90,3};
 		TwoSum t = new TwoSum();
-		int[] res = t.twoSum2(a, 8);
+		int[] res = t.twoSum(a, 8);
 		System.out.println(res[0]);
 		System.out.println(res[1]);
 	}
