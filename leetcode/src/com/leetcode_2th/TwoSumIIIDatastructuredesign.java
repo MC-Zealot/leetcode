@@ -1,8 +1,10 @@
 package com.leetcode_2th;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -58,19 +60,29 @@ public class TwoSumIIIDatastructuredesign {
 	 *
 	 */
 	public class TwoSumIIIDatastructuredesign_2 {
-		List<Integer> list = new ArrayList<Integer>();
-		Set<Integer> sumSet = new HashSet<Integer>();
+		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 		// Add the number to an internal data structure.
 		public void add(int number) {
-			for(Integer i: list){
-				sumSet.add(i + number);
+			if(!map.containsKey(number)){
+				map.put(number, 1);
+			}else{
+				map.put(number, map.get(number)+1);
 			}
-			list.add(number);
 		}
 		
 		// Find if there exists any pair of numbers which sum is equal to the value.
 		public boolean find(int value) {
-			return sumSet.contains(value);
+			 for(Integer i: map.keySet()){
+				 if(map.containsKey(value - i)){
+					 if(value- i!=i){
+						 return true;
+					 }else if(map.get(i)>1){
+						 return true;
+					 }
+				 }
+			 }
+			
+			return false;
 		}
 	}
 }
