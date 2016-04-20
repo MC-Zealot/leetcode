@@ -1,5 +1,11 @@
 package com.leetcode_2th;
-
+/**
+ * 
+ * 
+ * @author Zealot
+ * @date 2016年4月20日 下午5:24:05 
+ *
+ */
 public class ValidPalindrome {
 	public boolean isPalindrome(String s) {
 		if(s==null){
