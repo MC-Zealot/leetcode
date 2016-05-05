@@ -21,7 +21,14 @@ public class LongestPalindromicSubstring {
 		}
 		return s.substring(start, end + 1);
 	}
-
+/**
+ * 复用了代码
+ * @date 2016年5月5日 下午12:00:44
+ * @param s
+ * @param left
+ * @param right
+ * @return
+ */
 	private int expandAroundCenter(String s, int left, int right) {
 		int L = left, R = right;
 		while (L >= 0 && R < s.length() && s.charAt(L) == s.charAt(R)) {
