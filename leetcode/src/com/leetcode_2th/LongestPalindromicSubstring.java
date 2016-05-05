@@ -30,4 +30,8 @@ public class LongestPalindromicSubstring {
 		}
 		return R - L - 1;
 	}
+	public static void main(String[] args) {
+		LongestPalindromicSubstring l = new LongestPalindromicSubstring();
+		l.longestPalindrome("abba");
+	}
 }
