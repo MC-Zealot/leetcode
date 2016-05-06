@@ -7,6 +7,12 @@ package com.leetcode_2th;
  *
  */
 public class PalindromeNumber {
+	/**
+	 * 虽然能通过，但是可能会溢出,但是也不会报错。
+	 * @date 2016年5月6日 下午4:55:53
+	 * @param x
+	 * @return
+	 */
 	public boolean isPalindrome(int x) {
 		int tmp = x, rev = 0;
 		while (tmp > 0) {
@@ -17,7 +23,7 @@ public class PalindromeNumber {
 	}
 	public static void main(String[] args) {
 		PalindromeNumber p = new PalindromeNumber();
-		System.out.println(p.isPalindrome(12210));
-		System.out.println();
+		System.out.println(p.isPalindrome(2147483647));
+		System.out.println(Integer.MAX_VALUE);
 	}
 }
