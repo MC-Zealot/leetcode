@@ -25,14 +25,17 @@ public class ReadNCharactersGivenRead4 {
      * @return    The number of characters read
      */
     public int read(char[] buf, int n) {
-    	char[] buffer = new char[4];
     	int size = 0;
     	while(size<n){
+    		char[] buffer = new char[4];
     		int tmpSize = read4(buffer);
     		System.arraycopy(buffer, 0, buf, size, Math.min(tmpSize, n - size));
     		size = size + tmpSize;
+    		if(tmpSize<4){
+    			return Math.min(size, n);
+    		}
     	}
-    	return 0;
+    	return n;
     }
     private int read4(char[] buf) {
 
