@@ -29,6 +29,7 @@ public class ReadNCharactersGivenRead4 {
     	int size = 0;
     	while(size<n){
     		int tmpSize = read4(buffer);
+    		System.arraycopy(buffer, 0, buf, size, Math.min(tmpSize, n - size));
     		size = size + tmpSize;
     	}
     	return 0;
