@@ -13,6 +13,8 @@ package com.leetCode._2th;
 public class LongestPalindromicSubstring {
 	/**
 	 * O(n^3)
+	 * 暴力破解：start,end两层循环，遍历所有的子串，判断这些子串是否是回文
+	 * 
 	 * @param s
 	 * @return
 	 */

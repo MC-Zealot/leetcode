@@ -8,6 +8,11 @@ By using the read4 API, implement the function int read(char *buf, int n) that r
 
 Note:
 The read function will only be called once for each test case.
+题目大意：从一个文件中读取数据长度n，保存至buf当中。并且返回读取文件的长度。
+每次限制读取4个字符，使用api：read4.
+当读取一次小于4时，说明已经把文件所有内容读完了，那么返回文件长度。
+如果读到n时，返回n
+
  * 
  * @author Zealot
  * @date 2016年5月5日 下午5:18:04 
