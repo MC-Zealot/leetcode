@@ -78,8 +78,8 @@ public class AddTwoNumbers {
 			int x = l1 != null ? l1.val : 0;
 			int y = l2 != null ? l2.val : 0;
 			int digit = x + y + carry;
-			digit = digit % 10;
 			carry = digit / 10;
+			digit = digit % 10;
 			ListNode listNode = new ListNode(digit);
 			p.next = listNode;
 			if (l1 != null)
