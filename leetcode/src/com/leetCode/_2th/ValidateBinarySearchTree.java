@@ -20,6 +20,14 @@ Both the left and right subtrees must also be binary search trees.
  */
 public class ValidateBinarySearchTree {
 	boolean res = true;
+	/**
+	 * 中序遍历为升序
+	 * SPACE:O(n)
+	 * TIME:O(n)
+	 * @date 2016年5月13日 上午11:22:16
+	 * @param root
+	 * @return
+	 */
 	public boolean isValidBST(TreeNode root) {
 	    if(root==null){
 			return true;
