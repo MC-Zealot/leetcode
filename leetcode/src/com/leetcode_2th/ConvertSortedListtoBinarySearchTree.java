@@ -1,5 +1,8 @@
 package com.leetcode_2th;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.leetCode.CommonStructure.ListNode;
 import com.leetCode.CommonStructure.TreeNode;
 
@@ -26,6 +29,7 @@ public class ConvertSortedListtoBinarySearchTree {
 	}
 
 	public TreeNode sortedListToBST(ListNode head) {
+		Map map = new HashMap();
 		int n = 0;
 		ListNode p = head;
 		while (p != null) {
