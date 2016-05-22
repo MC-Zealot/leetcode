@@ -1,5 +1,11 @@
 package com.classicAlgorithm;
-
+/**
+ * 
+ * 
+ * @author Zealot
+ * @date 2016年5月22日 下午7:05:07 
+ *
+ */
 public class KMP {
 	void getNext(String pattern, int next[]) {
 		int j = 0;
