@@ -1,5 +1,8 @@
 package com.leetCode._2th;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import com.leetCode.CommonStructure.TrieNode;
 
 /**
@@ -55,5 +58,9 @@ public class ImplementTriePrefixTree {
 			}
 			return true;
 		}
+	}
+	public static void main(String[] args) {
+		Set<String> set = new HashSet<String>();
+		
 	}
 }
