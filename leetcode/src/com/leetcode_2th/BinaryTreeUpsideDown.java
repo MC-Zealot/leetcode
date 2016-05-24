@@ -13,7 +13,7 @@ import com.leetCode.CommonStructure.TreeNode;
  *
  */
 public class BinaryTreeUpsideDown {
-	public TreeNode UpsideDownBinaryTree(TreeNode root) {
+	public TreeNode upsideDownBinaryTree(TreeNode root) {
 		return dfsBottomUp(root, null);
 	}
 
