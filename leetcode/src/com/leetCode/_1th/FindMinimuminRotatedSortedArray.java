@@ -25,6 +25,12 @@ public class FindMinimuminRotatedSortedArray {
 		return nums[0];
 	}
 
+	/**
+	 * time:O(logn)
+	 * @date 2016年6月1日 下午1:47:29
+	 * @param nums
+	 * @return
+	 */
 	public int findMin2(int[] nums) {
 		int l = 0, r = nums.length - 1;
 		while (l < r && nums[l] >= nums[r]) {
