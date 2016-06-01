@@ -24,6 +24,19 @@ public class FindMinimuminRotatedSortedArray {
 		}
 		return nums[0];
 	}
+
+	public int findMin2(int[] nums) {
+		int l = 0, r = nums.length - 1;
+		while (l < r && nums[l] >= nums[r]) {
+			int M = (l + r) / 2;
+			if (nums[M] > nums[r]) {
+				l = M + 1;
+			} else {
+				r = M;
+			}
+		}
+		return nums[l];
+	}
 	public static void main(String[] args) {
 		int[] a = {4,5,6,7,1,2};
 		int[] b = {3};
