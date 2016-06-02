@@ -34,11 +34,11 @@ public class FindMinimuminRotatedSortedArray {
 	public int findMin2(int[] nums) {
 		int l = 0, r = nums.length - 1;
 		while (l < r && nums[l] >= nums[r]) {
-			int M = (l + r) / 2;
-			if (nums[M] > nums[r]) {
-				l = M + 1;
+			int m = (l + r) / 2;
+			if (nums[m] > nums[r]) {
+				l = m + 1;
 			} else {
-				r = M;
+				r = m;
 			}
 		}
 		return nums[l];
