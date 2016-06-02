@@ -1,5 +1,7 @@
 package com.leetCode._1th;
 
+import java.util.Arrays;
+
 /**
  * Suppose a sorted array is rotated at some pivot unknown to you beforehand.
  * 
@@ -49,5 +51,6 @@ public class FindMinimuminRotatedSortedArray {
 		int[] c = {1,2};
 		FindMinimuminRotatedSortedArray f = new FindMinimuminRotatedSortedArray();
 		System.out.println(f.findMin(c));
+		Arrays.sort(a);
 	}
 }
