@@ -3,11 +3,21 @@ package com.leetcode_2th;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
 /**
  * 
+ * Design and implement a data structure for Least Recently Used (LRU) cache. It
+ * should support the following operations: get and set.
  * 
+ * get(key) - Get the value (will always be positive) of the key if the key
+ * exists in the cache, otherwise return -1. 
+ * set(key, value) - Set or insert the
+ * value if the key is not already present. When the cache reached its capacity,
+ * it should invalidate the least recently used item before
+ * 
+ * 这题对时间复杂度没有要求，其实可以用ArrayList代替双向链表，实现起来简单一些，虽然时间复杂度要到O(n),删除、添加节点都是这样。
  * @author Zealot
- * @date 2016年6月3日 上午00:02:21 
+ * @date 2016年6月3日 上午00:02:21
  *
  */
 public class LRUCache {
@@ -114,6 +124,7 @@ public class LRUCache {
 		}
 
 	}
+
 	public static void main(String[] args) {
 		List<String> list = new ArrayList<String>();
 		list.add("1");
@@ -126,8 +137,9 @@ public class LRUCache {
 		list.add(0, "3");
 		System.out.println(list);
 	}
+
 	class Value {
-        int key;
-        int value;
-    }
+		int key;
+		int value;
+	}
 }
