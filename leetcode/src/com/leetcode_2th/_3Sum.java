@@ -69,7 +69,7 @@ public class _3Sum {
 			return;
 		}
 		for(int i = cur; i < nums.length; i++) {
-			if(i > cur && nums[i-1] == nums[i]){//如果相邻有重复，则跳过
+			if(i > cur && nums[i-1] == nums[i]){//如果相邻有重复，则跳过.PS:因为已经排序，相等的元素肯定相邻
 				continue;
 			}
 			list.add(nums[i]);
