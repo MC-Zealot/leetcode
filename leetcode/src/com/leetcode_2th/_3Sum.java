@@ -16,6 +16,13 @@ import java.util.Set;
  *
  */
 public class _3Sum {
+	/**
+	 * time: O(n^2)
+	 * space: O(n)
+	 * @date 2016年6月3日 上午11:05:34
+	 * @param nums
+	 * @return
+	 */
 	public List<List<Integer>> threeSum(int[] nums) {
 		List<List<Integer>> res = new ArrayList<List<Integer>>();
 		if(nums.length<=0){
@@ -45,9 +52,34 @@ public class _3Sum {
 		}
 		return res;
     }
+	public List<List<Integer>> threeSum2(int[] nums) {
+		List<List<Integer>> res = new ArrayList<List<Integer>>();
+		if(nums.length<=0){
+			return res;
+		}
+		Arrays.sort(nums);
+		backTracking(nums, 0, 0, new ArrayList<Integer>(), res);
+		return res;
+	}
+	private void backTracking(int[] nums, int cur, int sum, List<Integer> list, List<List<Integer>> res) {
+		if(list.size()==3){
+			if(sum == 0){
+				res.add(new ArrayList<Integer>(list));
+			}
+			return;
+		}
+		for(int i = cur; i < nums.length; i++) {
+			if(i > cur && nums[i-1] == nums[i]){//如果相邻有重复，则跳过
+				continue;
+			}
+			list.add(nums[i]);
+			backTracking(nums, i+1, sum+nums[i], list, res);
+			list.remove(list.size()-1);
+		}
+	}
 	public static void main(String[] args) {
 		_3Sum s = new _3Sum();
-		int[] a = {7,-1,14,-12,-8,7,2,-15,8,8,-8,-14,-4,-5,7,9,11,-4,-15,-6,1,-14,4,3,10,-5,2,1,6,11,2,-2,-5,-7,-6,2,-15,11,-6,8,-4,2,1,-1,4,-6,-15,1,5,-15,10,14,9,-8,-6,4,-6,11,12,-15,7,-1,-9,9,-1,0,-4,-1,-12,-2,14,-9,7,0,-3,-4,1,-2,12,14,-10,0,5,14,-1,14,3,8,10,-8,8,-5,-2,6,-11,12,13,-7,-12,8,6,-13,14,-2,-5,-11,1,3,-6};
-		System.out.println(s.threeSum(a));
+		int[] a = {-1, 0, 1, 2, -1, -4};
+		System.out.println(s.threeSum2(a));
 	}
 }
