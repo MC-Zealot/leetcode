@@ -1,7 +1,15 @@
 package com.leetcode_2th;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-
+import java.util.List;
+/**
+ * 
+ * 
+ * @author Zealot
+ * @date 2016年6月3日 上午00:02:21 
+ *
+ */
 public class LRUCache {
 	class DLinkedNode {
 		int key;
@@ -106,4 +114,20 @@ public class LRUCache {
 		}
 
 	}
+	public static void main(String[] args) {
+		List<String> list = new ArrayList<String>();
+		list.add("1");
+		list.add("2");
+		list.add("3");
+		list.add("4");
+		System.out.println(list);
+		list.remove(2);
+		System.out.println(list);
+		list.add(0, "3");
+		System.out.println(list);
+	}
+	class Value {
+        int key;
+        int value;
+    }
 }
