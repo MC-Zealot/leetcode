@@ -71,6 +71,7 @@ public class MaximumSubarray {
 	/**
 	 * time:O(n)
 	 * space:O(1)
+	 * dp
 	 * @date 2016年5月31日 下午8:53:28
 	 * @param A
 	 * @param L
