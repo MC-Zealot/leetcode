@@ -33,5 +33,8 @@ public class LongestCommonPrefix {
 		String[] strs = {""};
 		LongestCommonPrefix l = new LongestCommonPrefix();
 		System.out.println(l.longestCommonPrefix(strs));
+		
+		
+		
 	}
 }
