@@ -27,6 +27,15 @@ public class AddDigits {
 		
 		return num;
     }
+	/**
+	 * out = (in - 1) % 9 + 1
+	 * @date 2016年6月5日 下午1:48:18
+	 * @param num
+	 * @return
+	 */
+	public int addDigits2(int num) {
+		return (num-1) % 9 + 1;
+	}
 	public static void main(String[] args) {
 		AddDigits a = new AddDigits();
 		System.out.println(a.addDigits(38));
