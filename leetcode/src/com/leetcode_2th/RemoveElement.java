@@ -16,9 +16,6 @@ public class RemoveElement {
 				nums[place++] = nums[i];
 			}
 		}
-		for(int i = 0; i < place; i++ ){
-			System.out.print(nums[i]+"\t");
-		}
 		return place;
     }
 	public static void main(String[] args) {
