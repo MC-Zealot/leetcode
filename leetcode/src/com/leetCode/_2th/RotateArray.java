@@ -12,6 +12,13 @@ Try to come up as many solutions as you can, there are at least 3 different ways
  *
  */
 public class RotateArray {
+	/**
+	 * WA
+	 * @date 2016年6月7日 下午12:15:00
+	 * @param nums
+	 * @param k
+	 */
+	@Deprecated
 	public void rotate(int[] nums, int k) {
 		if(nums.length<k){
 			return;
@@ -28,6 +35,13 @@ public class RotateArray {
         	System.out.print(a[i]+"\t");
         }
     }
+	/**
+	 * WA
+	 * @date 2016年6月7日 下午12:15:00
+	 * @param nums
+	 * @param k
+	 */
+	@Deprecated
 	public void rotate2(int[] nums, int k) {
 		if(nums.length<k){
 			return;
@@ -62,8 +76,8 @@ public class RotateArray {
 	}
 	public static void main(String[] args) {
 		RotateArray r = new RotateArray();
-		int[] a = {1,2,3,4,5,6,7};
-		r.rotate2(a, 3);
+		int[] a = {1,2};
+		r.rotate(a, 1);
 	}
 }
 
