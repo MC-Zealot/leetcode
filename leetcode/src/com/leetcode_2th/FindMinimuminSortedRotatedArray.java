@@ -56,9 +56,9 @@ public class FindMinimuminSortedRotatedArray {
 	}
 	public static void main(String[] args) {
 		FindMinimuminSortedRotatedArray f = new FindMinimuminSortedRotatedArray();
-//		int[] a = {4,5,6,7,0,1,2};
-		int[] a = {3,1,2};
-		System.out.println(f.findMin(a));
+		int[] a = {4,5,6,7,0,1,2};
+//		int[] a = {3,1,2};
+		System.out.println(f.findMin3(a));
 	}
 	public int findMin2(int[] nums) {
 		int start = 0, end = nums.length - 1, mid = 0;
