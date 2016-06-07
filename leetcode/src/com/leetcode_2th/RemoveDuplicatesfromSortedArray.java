@@ -22,18 +22,19 @@ public class RemoveDuplicatesfromSortedArray {
 		if (nums.length <= 1) {
 			return nums.length;
 		}
-		int i = 0,j = 0;
+		int place = 0,//可能被替换的位置
+				j = 0;//是否出现过相同元素，0为没有，其他为出现过。
 		for (int next = 1; next < nums.length; next++) {
-			if (nums[i] != nums[next]) {
-				i++;
-				if (i + j + 1 != next) {
-					nums[i] = nums[next];
+			if (nums[place] != nums[next]) {
+				place++;
+				if (place + j + 1 != next) {
+					nums[place] = nums[next];
 				}
 			}else{
 				j++;
 			}
 		}
-		return i + 1;
+		return place + 1;
 	}
 
 	public static void main(String[] args) {
