@@ -22,6 +22,12 @@ public class FactorialTrailingZeroes {
 		
         return n5;
     }
+	/**
+	 * TLE
+	 * @date 2016年6月10日 下午1:45:37
+	 * @param n
+	 * @return
+	 */
 	public int trailingZeroes2(int n) {
 		int x = 5;
 	    int ans = 0;
@@ -31,6 +37,20 @@ public class FactorialTrailingZeroes {
         }
 	    return ans;
 	}
+	/**
+	 * AC
+	 * @date 2016年6月10日 下午1:45:58
+	 * @param n
+	 * @return
+	 */
+	public int trailingZeroes3(int n) {
+		int r = 0;
+	    while (n > 0) {
+	        n /= 5;
+	        r += n;
+	    }
+	    return r;
+    }
 	public static void main(String[] args) {
 		FactorialTrailingZeroes f = new FactorialTrailingZeroes();
 		System.out.println(f.trailingZeroes(7));
