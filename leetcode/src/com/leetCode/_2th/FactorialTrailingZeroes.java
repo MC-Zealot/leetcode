@@ -11,6 +11,13 @@ Note: Your solution should be in logarithmic time complexity.
  * @date 2016年1月11日 下午10:34:48
  */
 public class FactorialTrailingZeroes {
+	/**
+	 * WA
+	 * @date 2016年6月10日 下午1:27:22
+	 * @param n
+	 * @return
+	 */
+	@Deprecated
 	public int trailingZeroes(int n) {
 	   if(n<0){
 		   return 0;
@@ -45,6 +52,6 @@ public class FactorialTrailingZeroes {
 	}
 	public static void main(String[] args) {
 		 FactorialTrailingZeroes ftz = new FactorialTrailingZeroes();
-		 System.out.println(ftz.trailingZeroes2(9));
+		 System.out.println(ftz.trailingZeroes(7));
 	}
 }
