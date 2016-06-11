@@ -9,6 +9,13 @@ package com.leetCode._2th;
  *
  */
 public class Sqrtx {
+	/**
+	 * WA
+	 * @date 2016年6月11日 上午11:52:30
+	 * @param x
+	 * @return
+	 */
+	@Deprecated
 	public int mySqrt(int x) {
 		if(x<=0){
 			return 0;
