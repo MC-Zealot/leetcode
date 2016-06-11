@@ -9,6 +9,12 @@ import java.util.List;
  *
  */
 public class PascalsTriangle {
+	/**
+	 * TIME:O(1+2+3+...+n)=O(n^2)
+	 * @date 2016年6月11日 上午9:49:55
+	 * @param numRows
+	 * @return
+	 */
 	public List<List<Integer>> generate(int numRows) {
 		List<List<Integer>> res = new ArrayList<List<Integer>>();
         if(numRows==0){
@@ -29,11 +35,11 @@ public class PascalsTriangle {
         	return res;
         }
         List<Integer> pre = new ArrayList<Integer>(list2);
-        for(int i = 3; i <= numRows; i++) {
+        for(int i = 2; i < numRows; i++) {
         	List<Integer> list = new ArrayList<Integer>();
         	
-        	for(int j = 0; j < i; j++) {
-        		if(j==0||j==i - 1){
+        	for(int j = 0; j < i+1; j++) {//下标i是从0计数，要算到第i+1个真是的位置
+        		if(j==0||j==i ){
         			list.add(1);
         		}else{
         			list.add(pre.get(j-1)+pre.get(j));
@@ -44,6 +50,33 @@ public class PascalsTriangle {
         }
 		return res;
     }
+	/**
+	 * 
+	 * @date 2016年6月11日 上午9:50:44
+	 * @param numRows
+	 * @return
+	 */
+	public ArrayList<ArrayList<Integer>> generate2(int numRows) {  
+	     ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();  
+	     if(numRows<=0)  
+	        return res;  
+	     ArrayList<Integer> pre = new ArrayList<Integer>();  
+	     pre.add(1);  
+	     res.add(pre);  
+	     for(int i=2;i<=numRows;i++)  
+	     {  
+	         ArrayList<Integer> cur = new ArrayList<Integer>();  
+	         cur.add(1);  
+	         for(int j=0;j<pre.size()-1;j++)  
+	         {  
+	             cur.add(pre.get(j)+pre.get(j+1));  
+	         }  
+	         cur.add(1);  
+	         res.add(cur);  
+	         pre = cur;  
+	     }  
+	     return res;  
+	}  
 	public static void main(String[] args) {
 		PascalsTriangle p = new PascalsTriangle();
 		p.generate(4);
