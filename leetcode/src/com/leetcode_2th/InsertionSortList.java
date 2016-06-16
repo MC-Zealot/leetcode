@@ -1,7 +1,5 @@
 package com.leetcode_2th;
 
-import java.util.Arrays;
-
 import com.leetCode.CommonStructure.ListNode;
 
 /**
