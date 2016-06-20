@@ -1,5 +1,6 @@
 package com.leetcode_2th;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -38,6 +39,7 @@ public class WordBreak {
 		for(int i=0;i<s.length();i++){
 			for(int j=0;j<=i;j++){
 				String str = s.substring(j, i+1);
+				System.out.println(str);
 				if(res[j]&&wordDict.contains(str)){
 					res[i+1]=true;
 					break;
@@ -45,6 +47,13 @@ public class WordBreak {
 			}
 		}
 		return res[s.length()];
-	
     }
+	public static void main(String[] args) {
+		WordBreak w = new WordBreak();
+		String s = "leetcode";
+		Set<String> wordDict = new HashSet<String>();
+		wordDict.add("leet");
+		wordDict.add("code");
+		System.out.println(w.wordBreak(s, wordDict));
+	}
 }
