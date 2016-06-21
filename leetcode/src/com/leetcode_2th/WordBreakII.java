@@ -61,8 +61,7 @@ public class WordBreakII {
                 String newItem = new String();  
                 if(item.length()>0){
                 	newItem = item + " " + str.toString();
-                }
-                else{
+                } else{
                 	newItem = str.toString();
                 }
                 helper(s,dict,i+1,newItem,res);  
