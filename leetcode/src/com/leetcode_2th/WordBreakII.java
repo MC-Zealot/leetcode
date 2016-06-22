@@ -1,6 +1,7 @@
 package com.leetcode_2th;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -68,4 +69,15 @@ public class WordBreakII {
             }  
         }  
     }
+    public static void main(String[] args) {
+    	WordBreakII w = new WordBreakII();
+    	String s = "catsanddog";
+    	Set<String> dict = new HashSet<String>();
+    	dict.add("cat");
+    	dict.add("cats");
+    	dict.add("and");
+    	dict.add("sand");
+    	dict.add("dog");
+    	w.wordBreak(s, dict);
+	}
 }
