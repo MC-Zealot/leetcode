@@ -18,6 +18,13 @@ import java.util.List;
  *
  */
 public class _3SumClosest {
+	/**
+	 * TLE
+	 * @date 2016年6月22日 上午11:44:05
+	 * @param nums
+	 * @param target
+	 * @return
+	 */
 	public int threeSumClosest(int[] nums, int target) {
 		if(nums.length==0){
 			return 0;
