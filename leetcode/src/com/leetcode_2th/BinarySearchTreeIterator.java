@@ -23,14 +23,10 @@ public class BinarySearchTreeIterator {
 		 midTraceTree(root);
     }
 	public void midTraceTree(TreeNode root){
-        if(root!=null){
-           if(root.left!=null){
-               midTraceTree(root.left);
-           }
-           list.add(root.val);
-           if(root.right!=null){
-               midTraceTree(root.right);
-           }
+       if(root!=null){
+          midTraceTree(root.left);
+          list.add(root.val);
+          midTraceTree(root.right);
        }
    }
 	/** @return whether we have a next smallest number */
