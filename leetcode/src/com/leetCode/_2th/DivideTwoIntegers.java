@@ -9,6 +9,14 @@ If it is overflow, return MAX_INT.
  *
  */
 public class DivideTwoIntegers {
+	/**
+	 * TLE
+	 * @date 2016年6月12日 上午9:52:22
+	 * @param dividend
+	 * @param divisor
+	 * @return
+	 */
+	@Deprecated
 	public int divide(int dividend, int divisor) {
 		if(dividend == 0 ){
 			return 0;
