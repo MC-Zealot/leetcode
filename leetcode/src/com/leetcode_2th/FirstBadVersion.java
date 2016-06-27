@@ -1,6 +1,5 @@
 package com.leetcode_2th;
 
-import com.util.VersionControl;
 
 /**
  * You are a product manager and currently leading a team to develop a new
@@ -28,7 +27,7 @@ public class FirstBadVersion {
 		int left = 1;
         int right = n;
         while (left < right) {
-            int middle = left + (right - left) / 2;
+            int middle = left + (right - left) / 2;// if left and right are both very large, their sum will exceed integer limit
             if (isBadVersion(middle)) {
                 right = middle;
             } else {
