@@ -30,17 +30,17 @@ public class JumpGame {
 		}
 		return true;
     }
-	public boolean canJump2(int[] A) {  
-	    if(A==null || A.length==0)  
-	        return false;  
-	    int reach = 0;  
-	    for(int i=0;i<=reach&&i<A.length;i++)  
-	    {  
-	        reach = Math.max(A[i]+i,reach);  
-	    }  
-	    if(reach<A.length-1)  
-	        return false;  
-	    return true;  
+
+	public boolean canJump2(int[] A) {
+		if (A == null || A.length == 0)
+			return false;
+		int reach = 0;
+		for (int i = 0; i <= reach && i < A.length; i++) {
+			reach = Math.max(A[i] + i, reach);
+		}
+		if (reach < A.length - 1)
+			return false;
+		return true;
 	}  
 	public static void main(String[] args) {
 		JumpGame j = new JumpGame();
