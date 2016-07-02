@@ -29,9 +29,21 @@ public class MissingNumber {
 	 */
 	public int missingNumber2(int[] nums) {
         int res = 0;
+        int res2 =0;
+        int res3 = 0;
+        for (int i = 0; i < nums.length; i++) {
+			res2 ^= nums[i];
+			res3 ^= i + 1;//之所以要i + 1，是因为，nums.length是缺少了一个数的，长度也少了1。i代表原来的数组，所以要在缺少1的nums.length+ 1
+		}
+        System.out.println(res2^ res3);
         for (int i = 0; i < nums.length; ++i) {
             res ^= (i + 1) ^ nums[i];
         }
         return res;
     }
+	public static void main(String[] args) {
+		int[] a = {0,1,3};
+		MissingNumber m = new MissingNumber();
+		System.out.println(m.missingNumber2(a));
+	}
 }
