@@ -13,6 +13,7 @@ You may not engage in multiple transactions at the same time (ie, you must sell 
  */
 public class BestTimetoBuyandSellStockIII {
 	/**
+	 * runtime complexity: O(n^2)
 	 * TLE
 	 * @date 2016年7月5日 下午2:23:21
 	 * @param prices
@@ -44,7 +45,12 @@ public class BestTimetoBuyandSellStockIII {
 		}
 		return globe;
 	}
-	// 基本思想是分成两个时间段，然后对于某一天，计算之前的最大值和之后的最大值  
+	/**
+	 *	// 基本思想是分成两个时间段，然后对于某一天，计算之前的最大值和之后的最大值 
+	 * @date 2016年7月5日 下午3:08:06
+	 * @param prices
+	 * @return
+	 */
     public int maxProfit2(int[] prices) {  
         if(prices.length == 0){  
             return 0;  
