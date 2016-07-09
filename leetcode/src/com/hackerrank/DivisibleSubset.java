@@ -15,6 +15,9 @@ import java.util.Set;
  */
 public class DivisibleSubset {
 	public static void main(String[] args) {
+		solve();
+	}
+	private static void solve() {
 		Scanner in = new Scanner(System.in);
 		int n = in.nextInt();
 		int k = in.nextInt();
@@ -47,5 +50,28 @@ public class DivisibleSubset {
 		
 		System.out.println(res);
 		in.close();
+
 	}
+	private static void solve2() {
+		Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int k = in.nextInt();
+        int ra[] = new int[k];
+        for (int i = 0; i < n; i++) {
+            int r = in.nextInt() % k;
+            ra[r]++;
+        }
+
+        int res = 0;
+        for (int i = 0; i <= k / 2; i++) {
+            if (i == 0 || (i == k / 2 && k % 2 == 0)) {
+                res += Math.min(ra[i], 1);
+            } else {
+                res += Math.max(ra[i], ra[k - i]);
+            }
+        }
+
+        System.out.println(res);
+        in.close();
+    }
 }
