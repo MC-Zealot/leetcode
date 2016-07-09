@@ -10,7 +10,8 @@ public class Main {
 		
 		
 		
-		String a = "36452412";
+//		String a = "36452412";
+		String a = "4325214";
 		int len = a.length();
 		String m = "20";
 		int M = Integer.parseInt(m);
