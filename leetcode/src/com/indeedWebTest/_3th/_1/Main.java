@@ -35,6 +35,8 @@ public class Main {
 		}
 		
 		dfs(s, t, 0, new ArrayList<String>());
+		dfs(t, s, 0, new ArrayList<String>());
+		
 		System.out.println(res);
 		in.close();
 	}

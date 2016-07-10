@@ -19,11 +19,15 @@ public class Main {
 		double curA = b;
 		int sec = 0, round = 0;
 		while(sec<Integer.MAX_VALUE){
+			double min = Math.min(curT, curA);
+			if(min==0){
+				min = Math.max(curT, curA);
+			}
 			if(curT>0){
-				curT--;
+				curT = curT - min;
 			}else{
 				curT = a;
-				curT--;
+				curT = curT - min;
 				round++;
 				if(round==k){
 					System.out.println("Takahashi");
@@ -31,10 +35,10 @@ public class Main {
 				}
 			}
 			if(curA!=0){
-				curA--;
+				curA = curA - min;
 			}else{
 				curA = b;
-				curA--;
+				curA = curA - min;
 				round++;
 				if(round==k){
 					System.out.println("Aoki");
