@@ -19,8 +19,9 @@ return 1->2->2->4->3->5.
  */
 public class PartitionList {
 	public ListNode partition(ListNode head, int x) {
-        if(head==null||head.next==null)
-            return head;
+        if(head==null||head.next==null){
+        	return head;
+        }
         
         ListNode small = new ListNode(-1);
         ListNode newsmallhead = small;
