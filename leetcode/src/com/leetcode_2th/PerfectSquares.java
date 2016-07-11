@@ -49,4 +49,8 @@ public class PerfectSquares {
 		}
 		return dp[n];
 	}
+	public static void main(String[] args) {
+		PerfectSquares p = new PerfectSquares();
+		System.out.println(p.numSquares(5));
+	}
 }
