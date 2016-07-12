@@ -21,18 +21,28 @@ public class SearchinRotatedSortedArray {
 			if (target == A[m])
 				return m;
 			if (A[m] < A[r]) {
-				if (target > A[m] && target <= A[r])
+				if (target > A[m] && target <= A[r]){//单调
 					l = m + 1;
-				else
+				}
+				else{
 					r = m - 1;
+				}
 			} else {
-				if (target >= A[l] && target < A[m])
+				if (target >= A[l] && target < A[m]){//单调
 					r = m - 1;
-				else
+				}
+				else{
 					l = m + 1;
+				}
 			}
 		}
 		return -1;
 	}
-
+	
+	public static void main(String[] args) {
+		SearchinRotatedSortedArray s = new SearchinRotatedSortedArray();
+		int[] a = {3,1,1};
+		System.out.println(s.search(a, 3));
+		
+	}
 }
