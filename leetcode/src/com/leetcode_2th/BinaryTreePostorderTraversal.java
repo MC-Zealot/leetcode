@@ -27,6 +27,7 @@ Note: Recursive solution is trivial, could you do it iteratively?
 public class BinaryTreePostorderTraversal {
 	
 	/**
+	 * recursion
 	 * dfs
 	 * @date 2016年7月12日 下午4:12:46
 	 * @param root
@@ -45,6 +46,7 @@ public class BinaryTreePostorderTraversal {
 		dfs(root.right, res);
 		res.add(root.val);
 	}
+	
 	public List<Integer> postorderTraversal2(TreeNode p) {
 		List<Integer> res = new ArrayList<Integer>();
 		Stack<TreeNode> stack = new Stack<TreeNode>();
