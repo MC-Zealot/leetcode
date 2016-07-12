@@ -2,6 +2,7 @@ package com.leetcode_2th;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 import com.leetCode.CommonStructure.TreeNode;
 
@@ -43,5 +44,29 @@ public class BinaryTreePostorderTraversal {
 		dfs(root.left, res);
 		dfs(root.right, res);
 		res.add(root.val);
+	}
+	public List<Integer> postorderTraversal2(TreeNode p) {
+		List<Integer> res = new ArrayList<Integer>();
+		Stack<TreeNode> stack = new Stack<TreeNode>();
+		TreeNode node = p, prev = p;
+		while (node != null || stack.size() > 0) {
+			while (node != null) {
+				stack.push(node);
+				node = node.left;
+			}
+			if (stack.size() > 0) {
+				TreeNode temp = stack.peek().right;
+				if (temp == null || temp == prev) {
+					node = stack.pop();
+					res.add(node.val);
+					prev = node;
+					node = null;
+				} else {
+					node = temp;
+				}
+			}
+
+		}
+		return res;
 	}
 }
