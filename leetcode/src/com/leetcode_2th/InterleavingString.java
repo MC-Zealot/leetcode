@@ -51,37 +51,47 @@ public class InterleavingString {
         return isInterleaveInternal(s2, s1.substring(i1), s3.substring(i3));
         
     }
-	public boolean isInterleave2(String s1, String s2, String s3){
-        if(s1.length() + s2.length() != s3.length()) return false;
-        boolean[][] matched = new boolean[s1.length() + 1][s2.length() + 1];
-        matched[0][0] = true;
-        for(int i1 = 1; i1 <= s1.length(); i1++){
-            if(s3.charAt(i1-1) == s1.charAt(i1-1)) {
-                matched[i1][0] = true;
-            }else break;
-        }
-        for(int i2 = 1; i2 <= s2.length(); i2++){
-            if(s3.charAt(i2 - 1) == s2.charAt(i2 - 1)) {
-                matched[0][i2] = true;
-            }else break;
-        }
-        
-        for(int i1 = 1; i1 <= s1.length(); i1++){
-            char c1 = s1.charAt(i1 - 1);
-            for(int i2 = 1; i2 <= s2.length(); i2++){
-                int i3 = i1 + i2;
-                char c2 = s2.charAt(i2 - 1);
-                char c3 = s3.charAt(i3 - 1);
-                if(c1 == c3){
-                    matched[i1][i2] |= matched[i1 - 1][i2];
-                }
-                if(c2 == c3){
-                    matched[i1][i2] |= matched[i1][i2 - 1];
-                }
-            }
-        }
-        return matched[s1.length()][s2.length()];
-    }
+	/**
+	 * 我们从头到尾遍历这三个String，比如取名s1,s2,s3，然后取p1,p2,p3三个指针来对应每个String里当前遍历到的字符位置
+
+这么想，如果s1的p1位，和s2的p2位，和s3的p3位都相等，那么在s3挑选的字符的时候，我们可以挑s1的那一位，也可以挑s2的那一位，
+
+所以在递归的时候我们用或（｜｜）把两种情况连接起来，传入s1的下一位，或者s2的下一位
+
+如果只有s1的p1位和s3的p3位相等，那只能传入s1的下一位
+
+如果只有s2的p2位和s3的p3位相等，那只能传入s2的下一位
+
+如果没有发现相等，return false 退回到上一层
+
+	 * @date 2016年7月12日 下午8:53:35
+	 * @param s1
+	 * @param s2
+	 * @param s3
+	 * @return
+	 */
+	public boolean isInterleaveInternal2(String s1, String s2, String s3) {
+		if (s1.length() + s2.length() != s3.length()){
+			return false;
+		}
+		return rec(s1, 0, s2, 0, s3, 0);
+	}  
+	      
+	public boolean rec(String s1, int p1, String s2, int p2, String s3, int p3) {
+		if (p3 == s3.length()) return true;  
+		if (p1 == s1.length())
+			return s2.substring(p2).equals(s3.substring(p3));  
+		if (p2 == s2.length())
+			return s1.substring(p1).equals(s3.substring(p3));
+		if (s1.charAt(p1) == s3.charAt(p3) && s2.charAt(p2) == s3.charAt(p3))
+			return rec(s1, p1 + 1, s2, p2, s3, p3 + 1) || rec(s1, p1, s2, p2 + 1, s3, p3 + 1);
+		else if (s1.charAt(p1) == s3.charAt(p3))
+			return rec(s1, p1 + 1, s2, p2, s3, p3 + 1);
+		else if (s2.charAt(p2) == s3.charAt(p3))
+			return rec(s1, p1, s2, p2 + 1, s3, p3 + 1);
+		else
+			return false;
+	}  
 	public static void main(String[] args) {
 		InterleavingString i = new InterleavingString();
 		String s1 = "aabcc";
