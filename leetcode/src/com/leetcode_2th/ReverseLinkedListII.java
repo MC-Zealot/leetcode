@@ -33,11 +33,7 @@ public class ReverseLinkedListII {
 			index++;
 			if (index <= n && index >= m) {
 				stack.push(pre.next.val);
-				if(pre.next.next!=null){
-					pre.next = pre.next.next;
-				}else{
-					pre.next = null;
-				}
+				pre.next = pre.next.next;
 			}else{
 				pre = pre.next;
 			}
