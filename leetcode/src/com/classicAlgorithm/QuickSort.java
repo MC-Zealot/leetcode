@@ -1,5 +1,8 @@
 package com.classicAlgorithm;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class QuickSort {
 	static int[] a = {3,1,6,2};
 	private int adjustArray( int i, int j) {
@@ -12,7 +15,7 @@ public class QuickSort {
 				a[i] = a[j];
 				i++;
 			}
-			while(i < j && x > a[j]) {
+			while(i < j && x > a[i]) {
 				i++;
 			}
 			if(i < j) {
@@ -61,5 +64,7 @@ public class QuickSort {
 		for(int i = 0; i < a.length; i++) {
 			System.out.print(a[i] + "\t");
 		}
+		List list = new ArrayList();
+		list.addAll(new ArrayList());
 	}
 }
