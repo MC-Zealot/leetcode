@@ -1,6 +1,7 @@
 package com.leetcode_2th;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -86,26 +87,68 @@ public class MergeIntervals {
 		}
 		return res;
 	}  
+	public ArrayList<Interval> merge3(ArrayList<Interval> intervals) {
+	        ArrayList<Interval> res = new ArrayList<Interval>();
+	        if(intervals == null || intervals.isEmpty()) return res;
+	        Comparator<Interval> comparator = new Comparator<Interval>(){
+	            public int compare(Interval a, Interval b){
+	                if(a.start < b.start) return -1;
+	                else if(a.start > b.start) return 1;
+	                else {
+	                    if(a.end < b.end) return -1;
+	                    else if(a.end < b.end) return -1;
+	                    else return 0;
+	                }
+	                
+	            }
+	        };
+	       Collections.sort(intervals,comparator);
+	       for(int i=0; i<intervals.size();i++){
+	           Interval current = intervals.get(i);
+	           if(res.isEmpty()){
+	               res.add(current);
+	           } else{
+	               Interval last = res.get(res.size() - 1);
+	                if(last.end >= current.start) {
+	                    last.end = Math.max(last.end,current.end);
+	                }else{
+	                    res.add(current);
+	                }
+	                }
+	               
+	           }
+	        return res;
+	}
 	public static void main(String[] args) {
-		int num1, num2, num3;
-        Scanner scanner = new Scanner(System.in);
-        //1 2 3
-        System.out.println("請輸入三個數字(以空白鍵分開)：");
-//        num1 = scanner.nextInt();
-//        num2 = scanner.nextInt();
-//        num3 = scanner.nextInt();
-        String a = scanner.nextLine();
-        int b = -1;
-        if(scanner.hasNextInt()){
-        	b = scanner.nextInt();
-        }
-        System.out.println(a);
-        
-        System.out.println(b);
-//        scanner.
-//        System.out.println("您輸入第一個數字為：" + num1 );
-//        System.out.println("您輸入第二個數字為：" + num2 );
-//        System.out.println("您輸入第三個數字為：" + num3 );
-        scanner.close();
+//		Given [1,3],[2,6],[8,10],[15,18],
+		/*Interval i = new Interval(1,3);
+		Interval i2 = new Interval(2,6);
+		Interval i3 = new Interval(8,10);
+		Interval i4 = new Interval(15,18);
+		List<Interval> l = new ArrayList<Interval>();
+		l.add(i);
+		
+		l.add(i3);
+		l.add(i2);
+		l.add(i4);
+		Comparator<Interval> comp = new Comparator<Interval>() {
+			@Override
+			public int compare(Interval i1, Interval i2) {
+				if (i1.start == i2.start)
+					return i1.end - i2.end;
+				return i1.start - i2.start;
+			}
+		};
+		Collections.sort(l, comp);
+		for(Interval interval: l){
+			System.out.println(interval);
+		}*/
+		
+		Integer[] array = 
+			{0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+			0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 2, 1, 0, 0, 0, 2, 30, 0, 3};
+
+		Arrays.sort(array);
+		System.out.println(array);
 	}
 }

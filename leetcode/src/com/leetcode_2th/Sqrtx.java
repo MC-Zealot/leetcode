@@ -49,8 +49,25 @@ public class Sqrtx {
 		}
 		return r;
 	}  
+	
+	public int sqrt3(int x) {
+		for(int i = 0; i * i <= x; i++) {
+			if(i * i == x){
+				return i;
+			}
+		}
+		return -1;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	public static void main(String[] args) {
 		Sqrtx s =  new Sqrtx();
-		System.out.println(s.sqrt(16));
+		System.out.println(s.sqrt3(16));
 	}
 }

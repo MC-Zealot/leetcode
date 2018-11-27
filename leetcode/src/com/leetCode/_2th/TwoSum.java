@@ -88,9 +88,9 @@ public class TwoSum {
 		return res2;
 	}
 	public static void main(String[] args) {
-		int[] a = {2,1,9,4,4,56,90,3};
+		int[] a = {3,3};
 		TwoSum t = new TwoSum();
-		int[] res = t.twoSum(a, 8);
+		int[] res = t.twoSum2(a, 6);
 		System.out.println(res[0]);
 		System.out.println(res[1]);
 	}

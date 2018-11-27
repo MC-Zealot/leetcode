@@ -23,8 +23,7 @@ public class Clonegraph {
 		return DFS(graph, map);
 	}
 
-	private UndirectedGraphNode DFS(UndirectedGraphNode graph,
-			Map<UndirectedGraphNode, UndirectedGraphNode> map) {
+	private UndirectedGraphNode DFS(UndirectedGraphNode graph, Map<UndirectedGraphNode, UndirectedGraphNode> map) {
 		if (map.containsKey(graph)) {
 			return map.get(graph);
 		}

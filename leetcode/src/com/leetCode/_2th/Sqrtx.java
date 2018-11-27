@@ -1,4 +1,7 @@
 package com.leetCode._2th;
+
+import java.text.DecimalFormat;
+
 /**
  * Implement int sqrt(int x).
 
@@ -44,7 +47,21 @@ public class Sqrtx {
 		}
 	}
 	public static void main(String[] args) {
-		Sqrtx x = new Sqrtx();
-		System.out.println(x.mySqrt(2));
+//		Sqrtx x = new Sqrtx();
+//		System.out.println(x.mySqrt(2));
+//		for(int i=2;i<1000;i++){
+//			int sum=0;
+//			//查找因数
+//			for (int j = 1; j < i; j++) {
+//				if (i % j == 0) {
+//					sum += j;
+//				}
+//				if (sum == i)
+//					System.out.println(i);
+//			}
+//		}
+//		String[] s;
+//		s.length
+		DecimalFormat df = new DecimalFormat("0");   
 	}
 }

@@ -22,12 +22,8 @@ public class LCS {
             for (int j=1;j<=Y.length;j++){
                 if(X[i-1]==Y[j-1]){
                     c[i][j] = c[i-1][j-1]+1;
-                }
-                else if(c[i-1][j] >= c[i][j-1]){
-                    c[i][j] = c[i-1][j];
-                }
-                else{
-                    c[i][j] = c[i][j-1];
+                }else {
+                	c[i][j] = Math.max(c[i][j-1], c[i-1][j]);
                 }
             }
         }
@@ -55,11 +51,25 @@ public class LCS {
             print(arr, X, Y, i, j-1);
         }
     }
+    public static void print2(int[][] arr, char[] X, char[] Y, int i, int j) {
+    	if(i == X.length || j == Y.length)
+    		return;
+    	if(X[i] == Y[j]) {
+    		System.out.print("element " + X[i] + " ");
+    		// 寻找的
+    		print2(arr, X, Y, i + 1, j + 1);
+    	}else if(arr[i+1][j] >= arr[i][j+1]) {
+    		print2(arr, X, Y, i+1, j);
+    	}else{
+    		print2(arr, X, Y, i, j+1);
+    	}
+    }
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         char[] x ={'A','B','C','B','D','A','B'}; 
         char[] y ={'B','D','C','A','B','A'}; 
         int[][] c = lengthofLCS(x,y);
-        print(c, x, y, x.length, y.length);
+//        print(c, x, y, x.length, y.length);
+        print2(c, x, y, 0, 0);
     }
 }

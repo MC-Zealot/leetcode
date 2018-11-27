@@ -11,28 +11,28 @@ package com.leetcode_2th;
  *
  */
 public class SearchinRotatedSortedArray {
-	public int search(int[] A, int target) {
-		if (A == null || A.length == 0)
+	public int search(int[] a, int m) {
+		if (a == null || a.length == 0)
 			return -1;
-		int l = 0;
-		int r = A.length - 1;
-		while (l <= r) {
-			int m = (l + r) / 2;
-			if (target == A[m])
-				return m;
-			if (A[m] < A[r]) {
-				if (target > A[m] && target <= A[r]){//单调
-					l = m + 1;
+		int i = 0;
+		int j = a.length - 1;
+		while (i <= j) {
+			int mid = (i + j) / 2;
+			if (m == a[mid])
+				return mid;
+			if (a[mid] < a[j]) {
+				if (m > a[mid] && m <= a[j]){//单调
+					i = mid + 1;
 				}
 				else{
-					r = m - 1;
+					j = mid - 1;
 				}
 			} else {
-				if (target >= A[l] && target < A[m]){//单调
-					r = m - 1;
+				if (m >= a[i] && m < a[mid]){//单调
+					j = mid - 1;
 				}
 				else{
-					l = m + 1;
+					i = mid + 1;
 				}
 			}
 		}

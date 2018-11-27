@@ -14,21 +14,21 @@ public class TwoSum {
 	 * 时间复杂度：O(n)
 	 * 空间复杂度：O(n)
 	 * @date 2016年4月17日 下午2:29:37
-	 * @param nums
-	 * @param target
+	 * @param a
+	 * @param m
 	 * @return
 	 */
-	public int[] twoSum(int[] nums, int target) {
+	public int[] twoSum(int[] a, int m) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         int[] res = new int[2];
-        int len = nums.length;
+        int len = a.length;
         for(int i = 0; i < len; i++) {
-            if(map.containsKey(target-nums[i])){
-                res[0] = map.get(target - nums[i]);
+            if(map.containsKey(m-a[i])){
+                res[0] = map.get(m - a[i]);
                 res[1] = i;
                 return res;
             }else{
-                map.put(nums[i], i);
+                map.put(a[i], i);
             }
         }
         return res;
