@@ -55,8 +55,6 @@ public class QuickSort {
 			quick_sort(s, l, i - 1); // 递归调用
 			quick_sort(s, i + 1, r);
 			
-			
-			//
 		}
 	}
 	public static void main(String[] args) {
