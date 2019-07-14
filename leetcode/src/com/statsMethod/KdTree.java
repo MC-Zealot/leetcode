@@ -84,7 +84,7 @@ public class KdTree {
 		System.out.println(node.node.x + ", " + node.node.y);
 		if (node.left == null && node.right == null) {
 			
-			if()
+			
 			
 			curBest.x = node.node.x;
 			curBest.y = node.node.y;
