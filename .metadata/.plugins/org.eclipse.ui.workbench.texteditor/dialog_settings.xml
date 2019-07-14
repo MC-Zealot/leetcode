@@ -1,26 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="265" key="DIALOG_WIDTH"/>
-		<item value="134" key="DIALOG_Y_ORIGIN"/>
-		<item value="508" key="DIALOG_X_ORIGIN"/>
-		<item value="399" key="DIALOG_HEIGHT"/>
-		<item value="1|.SF NS Text|11.0|0|COCOA|1|.SFNSText-Regular" key="DIALOG_FONT_NAME"/>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="415" key="DIALOG_Y_ORIGIN"/>
+		<item value="724" key="DIALOG_X_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item value="true" key="wrap"/>
-		<item value="false" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
+		<item value="followRatio" key="selection"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
-		<item value="numRows" key="selection"/>
 		<list key="findhistory">
-			<item value="nRows"/>
-			<item value="long"/>
+			<item value="job"/>
+			<item value="followRatio"/>
+			<item value="historyuid_ratio"/>
+			<item value="EstimateReducer"/>
+			<item value="unit"/>
+			<item value="GMMProcessor"/>
+			<item value="special"/>
+			<item value="debug"/>
 		</list>
 		<list key="replacehistory">
-			<item value="numRows"/>
-			<item value="int"/>
+			<item value=""/>
+			<item value="}"/>
+			<item value="HashMap"/>
+			<item value="right"/>
+			<item value="left"/>
+			<item value="val"/>
+			<item value="TreeNode"/>
+			<item value="{"/>
 		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="265" key="DIALOG_WIDTH"/>
+		<item value="1|.SF NS Text|11.0|0|COCOA|1|.SFNSText" key="DIALOG_FONT_NAME"/>
+		<item value="399" key="DIALOG_HEIGHT"/>
+		<item value="198" key="DIALOG_Y_ORIGIN"/>
+		<item value="765" key="DIALOG_X_ORIGIN"/>
 	</section>
 </section>

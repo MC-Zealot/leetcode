@@ -29,3 +29,7 @@ tmp/
 *.xmi
 *.index
 *.resources
+*.class
+#
+.metadata/
+*.xml

@@ -3,26 +3,41 @@
 	<list key="workingset_selection_history">
 		<item value="leetcode"/>
 	</list>
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item value="-510" key="DIALOG_Y_ORIGIN"/>
+		<item value="-493" key="DIALOG_X_ORIGIN"/>
+	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="800" key="dialogWidth"/>
-		<item value="500" key="dialogHeight"/>
+		<item value="675" key="dialogHeight"/>
+		<item value="1200" key="dialogWidth"/>
+		<list key="textEntries">
+		</list>
+		<list key="orderedElements">
+		</list>
 		<list key="orderedProviders">
 		</list>
 		<list key="textArray">
 		</list>
-		<list key="orderedElements">
-		</list>
-		<list key="textEntries">
-		</list>
 	</section>
-	<section name="WorkbenchPreferenceDialogSettings">
-		<item value="102" key="DIALOG_Y_ORIGIN"/>
-		<item value="279" key="DIALOG_X_ORIGIN"/>
+	<section name="org.eclipse.ui.internal.dialogs.WorkbenchEditorsDialog">
+		<item value="0" key="sort"/>
+		<item value="false" key="allPersp"/>
+		<list key="columns">
+			<item value="199"/>
+			<item value="399"/>
+		</list>
+		<list key="bounds">
+			<item value="329"/>
+			<item value="45"/>
+			<item value="622"/>
+			<item value="448"/>
+		</list>
 	</section>
 	<section name="ImportExportAction">
-		<item value="org.eclipse.egit.ui.internal.clone.GitCloneWizard" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
+		<item value="org.eclipse.cdt.ui.wizards.MakeProjFromExisting" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
 		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
 			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.cdt.ui.importWizardCategory"/>
 			<item value="org.eclipse.egit.ui.internal.clone.gitclonecategory"/>
 		</list>
 	</section>
