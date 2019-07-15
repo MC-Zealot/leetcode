@@ -80,6 +80,6 @@ public class _3Sum {
 	public static void main(String[] args) {
 		_3Sum s = new _3Sum();
 		int[] a = {-1, 0, 1, 2, -1, -4};
-		System.out.println(s.threeSum2(a));
+		System.out.println(s.threeSum(a));
 	}
 }

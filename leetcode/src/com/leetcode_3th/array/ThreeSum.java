@@ -25,6 +25,20 @@ import java.util.Set;
  *
  */
 public class ThreeSum {
+	/**
+	 * 
+输入：
+[0,0,0]
+输出：
+[]
+预期：
+[[0,0,0]]
+	 * @date Jul 15, 2019 5:23:14 PM
+	 * @param nums
+	 * @param target
+	 * @param start
+	 * @return
+	 */
 	public int[] twoSum(int[] nums, int target, int start) {
 		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 		int[] res = new int[2];
@@ -75,7 +89,7 @@ public class ThreeSum {
 	}
 	
 	/**
-	 *  
+	 *  超时
 	 * @date Jul 15, 2019 5:17:21 PM
 	 * @param nums
 	 * @return

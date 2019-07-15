@@ -33,3 +33,4 @@ tmp/
 #
 .metadata/
 *.xml
+*.xmi
