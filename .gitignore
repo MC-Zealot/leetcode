@@ -13,7 +13,6 @@ gen
 target/
 
 ### Eclipse template
-.metadata/
 bin/
 tmp/
 *.tmp
@@ -31,6 +30,6 @@ tmp/
 *.resources
 *.class
 #
-.metadata/
+.metadata
 *.xml
 *.xmi
