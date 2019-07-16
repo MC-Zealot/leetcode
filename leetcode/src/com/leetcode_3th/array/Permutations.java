@@ -38,14 +38,13 @@ public class Permutations {
 	}
 
 	public static void main(String[] args) {
-		LinkedList<String> list = new LinkedList<String>();
-		list.add("1");
-		list.add("2");
-		list.add("3");
-//		list.add(1, "9");
 		Permutations p = new Permutations();
-		int[] nums = { 1, 2 , 3};
-		System.out.println(p.permute(nums));
+		int[] nums = { 4, 2, 0, 2, 3, 2, 0 };
+		List<List<Integer>> res = p.permute(nums);
+		for(int i = 0; i < res.size(); i ++) {
+			System.out.println(res.get(i));
+		}
+//		System.out.println(p.permute(nums));
 //		List<List<Integer>> combs = new ArrayList<>();
 //		int n = 4;
 //		for (int i = 1; i <= n; i++) combs.add(Arrays.asList(i));
