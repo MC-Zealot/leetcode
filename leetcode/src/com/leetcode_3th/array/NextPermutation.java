@@ -14,7 +14,7 @@ public class NextPermutation {
 			if (nums[left] < nums[right]) {
 				// 当找到left之后，find right, right 从最右边开始找
 				right=nums.length - 1;
-				while (left < right && right > left) {
+				while (left < right) {
 					if (nums[right] > nums[left]) {
 						break;
 					}
@@ -49,8 +49,8 @@ public class NextPermutation {
 
 	public static void main(String[] args) {
 		NextPermutation np = new NextPermutation();
-		int[] a = {1,3,2};
-//		int[]		a = {4,2,0,2,3,2,0};
+//		int[] a = {1,3,2};
+		int[]		a = {4,2,0,2,3,2,0};
 		np.nextPermutation(a);
 
 	}

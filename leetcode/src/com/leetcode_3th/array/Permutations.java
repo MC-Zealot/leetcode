@@ -2,7 +2,6 @@ package com.leetcode_3th.array;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 
 public class Permutations {
@@ -13,12 +12,12 @@ public class Permutations {
 		}
 		int[] flags = new int[nums.length];
 		Arrays.sort(nums);
-		dfs(0, nums, flags, res, new ArrayList<Integer>());
+		dfs(nums, flags, res, new ArrayList<Integer>());
 
 		return res;
 	}
 
-	public void dfs(int curr, int[] nums, int[] flags, List<List<Integer>> res, List<Integer> tmp) {
+	public void dfs(int[] nums, int[] flags, List<List<Integer>> res, List<Integer> tmp) {
 		
 		if (nums.length==tmp.size()) {
 			res.add(new ArrayList<Integer>(tmp));
@@ -30,7 +29,7 @@ public class Permutations {
 			}
 			tmp.add(nums[i]);
 			flags[i]=1;
-			dfs(++curr, nums,flags,res, tmp);
+			dfs(nums,flags,res, tmp);
 			flags[i]=0;
 			tmp.remove(tmp.size()-1);
 		}

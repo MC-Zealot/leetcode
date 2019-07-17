@@ -162,6 +162,14 @@ public class ThreeSum {
         return ret;  
     }  
       
+    /**
+     * 二分查找的前提是数组有序，这需要O(nlogn)的时间复杂度
+     * @date Jul 17, 2019 10:27:09 AM
+     * @param num
+     * @param begin
+     * @param end
+     * @param target
+     */
     public void find(int[] num, int begin, int end, int target) {  
         int l = begin, r = end;  
         while (l < r) {  
