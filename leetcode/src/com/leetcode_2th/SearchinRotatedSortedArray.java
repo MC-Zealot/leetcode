@@ -11,24 +11,24 @@ package com.leetcode_2th;
  *
  */
 public class SearchinRotatedSortedArray {
-	public int search(int[] a, int m) {
+	public int search(int[] a, int target) {
 		if (a == null || a.length == 0)
 			return -1;
 		int i = 0;
 		int j = a.length - 1;
 		while (i <= j) {
 			int mid = (i + j) / 2;
-			if (m == a[mid])
+			if (target == a[mid])
 				return mid;
 			if (a[mid] < a[j]) {
-				if (m > a[mid] && m <= a[j]){//单调
+				if (target > a[mid] && target <= a[j]){//单调
 					i = mid + 1;
 				}
 				else{
 					j = mid - 1;
 				}
 			} else {
-				if (m >= a[i] && m < a[mid]){//单调
+				if (target >= a[i] && target < a[mid]){//单调
 					j = mid - 1;
 				}
 				else{
@@ -41,7 +41,7 @@ public class SearchinRotatedSortedArray {
 	
 	public static void main(String[] args) {
 		SearchinRotatedSortedArray s = new SearchinRotatedSortedArray();
-		int[] a = {3,1,1};
+		int[] a = {1,3};
 		System.out.println(s.search(a, 3));
 		
 	}
