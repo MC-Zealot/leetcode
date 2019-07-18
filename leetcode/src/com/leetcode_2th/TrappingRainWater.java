@@ -17,13 +17,13 @@ public class TrappingRainWater {
 		int max = 0;
 		int res = 0;
 		int[] container = new int[A.length];
-		for (int i = 0; i < A.length; i++) {
+		for (int i = 0; i < A.length; i++) {//从目前为止最高的，放到新的数组container中
 			container[i] = max;
-			max = Math.max(max, A[i]);
+			max = Math.max(max, A[i]);//并且找到最大的
 		}
 		max = 0;
 		for (int i = A.length - 1; i >= 0; i--) {
-			container[i] = Math.min(max, container[i]);
+			container[i] = Math.min(max, container[i]);//container与max比较
 			max = Math.max(max, A[i]);
 			res += container[i] - A[i] > 0 ? container[i] - A[i] : 0;
 		}
