@@ -1,4 +1,4 @@
-package com.leetcode_3th.array;
+package com.leetcode_3th.dp;
 
 import java.util.HashMap;
 import java.util.Map;
