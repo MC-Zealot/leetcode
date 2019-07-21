@@ -1,4 +1,4 @@
-package com.leetcode_3th.array;
+package com.leetcode_3th.dp;
 
 /**
  * 给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。
@@ -38,7 +38,7 @@ public class BestTimetoBuyandSellStock {
 
 	/**
 	 * dp 从每天的股价转换成每天的涨幅 然后计算最长子序列
-	 * 
+	 * O(n)
 	 * @date Jul 21, 2019 5:14:42 PM
 	 * @param prices
 	 * @return
