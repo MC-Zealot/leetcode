@@ -76,7 +76,13 @@ public class UniquePaths {
 		}
 		return res;
 	}
-	
+	/**
+	 * O(n^2)
+	 * @date Jul 21, 2019 12:10:42 PM
+	 * @param m
+	 * @param n
+	 * @return
+	 */
 	public int uniquePaths2(int m, int n) {
 		int[][] a = new int[m][n];
 		for(int i = 0; i < n; i++) {
