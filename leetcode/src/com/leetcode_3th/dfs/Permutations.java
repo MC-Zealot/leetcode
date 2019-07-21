@@ -1,4 +1,4 @@
-package com.leetcode_3th.array;
+package com.leetcode_3th.dfs;
 
 import java.util.ArrayList;
 import java.util.Arrays;
