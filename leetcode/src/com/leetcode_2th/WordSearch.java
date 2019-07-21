@@ -34,9 +34,9 @@ public class WordSearch {
 		}
 		used[i][j] = true;
 		boolean res = search(board, word, index + 1, i - 1, j, used)
-				|| search(board, word, index + 1, i + 1, j, used)
-				|| search(board, word, index + 1, i, j - 1, used)
-				|| search(board, word, index + 1, i, j + 1, used);
+						|| search(board, word, index + 1, i + 1, j, used)
+						|| search(board, word, index + 1, i, j - 1, used)
+						|| search(board, word, index + 1, i, j + 1, used);
 		used[i][j] = false;
 		
 		return res;
