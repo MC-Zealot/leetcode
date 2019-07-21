@@ -27,7 +27,10 @@ public class MinimumPathSum {
 		for (int i = 1; i < grid[0].length; i++) {
 			sum_grid[0][i] = grid[0][i] + sum_grid[0][i - 1];
 		}
-
+/**
+ * 状态转移方程，因为到达当前位置 (i, j)  只有两种情况，要么从上方 (i-1, j) 过来，要么从左边 (i, j-1) 过来
+ * 当前的是sum，包括之前所有路径的和，所有是当前的全局最优
+ */
 		for (int i = 1; i < grid.length; i++) {
 			for (int j = 1; j < grid[i].length; j++) {
 				int left = 0, up = 0;
