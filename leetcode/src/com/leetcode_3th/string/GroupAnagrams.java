@@ -39,7 +39,6 @@ public class GroupAnagrams {
 			}else {
 				map.get(String.valueOf(cc)).add(strs[i]);	
 			}
-			
 		}
 		
 		for(String key: map.keySet()) {
