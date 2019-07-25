@@ -24,7 +24,7 @@ public class SortList {
 			walker = walker.next;
 			runner = runner.next.next;
 		}
-		ListNode head2 = walker.next;
+		ListNode head2 = walker.next;//head2走到了中间的节点
 		walker.next = null;
 		ListNode head1 = head;
 		head1 = mergeSort(head1);
