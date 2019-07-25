@@ -25,16 +25,13 @@ public class BinaryTreeInorderTraversal {
 		dfs(root, res);
 		return res;
 	}
-	public void dfs(TreeNode root,List<Integer> res) {
-		if(root==null) {
+
+	public void dfs(TreeNode root, List<Integer> res) {
+		if (root == null) {
 			return;
 		}
-		if(root.left!=null) {
-			dfs(root.left, res);
-		}
+		dfs(root.left, res);
 		res.add(root.val);
-		if(root.right!=null) {
-			dfs(root.right,res);
-		}
+		dfs(root.right, res);
 	}
 }
