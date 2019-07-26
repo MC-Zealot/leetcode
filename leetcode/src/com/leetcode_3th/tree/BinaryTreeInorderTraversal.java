@@ -42,7 +42,7 @@ public class BinaryTreeInorderTraversal {
 		List<Integer> res = new ArrayList<Integer>();
 		if(root!=null){
 			Stack<TreeNode> stack = new Stack<TreeNode>();
-			Set<TreeNode> set = new HashSet<TreeNode>();
+			Set<TreeNode> set = new HashSet<TreeNode>();//保存已经访问的节点
 			stack.push(root);	
 			while(stack.size() != 0){
 				if(root.left != null && !set.contains(root.left)){
