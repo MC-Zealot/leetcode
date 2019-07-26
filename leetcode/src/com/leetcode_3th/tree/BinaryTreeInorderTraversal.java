@@ -45,6 +45,7 @@ public class BinaryTreeInorderTraversal {
 			Set<TreeNode> set = new HashSet<TreeNode>();//保存已经访问的节点
 			stack.push(root);	
 			while(stack.size() != 0){
+				root = stack.peek();
 				if(root.left != null && !set.contains(root.left)){
 					stack.push(root.left);	
 					root = root.left;
@@ -55,9 +56,6 @@ public class BinaryTreeInorderTraversal {
 				res.add(node.val);
 				if(root.right != null && !set.contains(root.right)){
 					stack.push(root.right);	
-				}
-				if(stack.size()>0) {
-					root = stack.peek();
 				}
 			}
 		}

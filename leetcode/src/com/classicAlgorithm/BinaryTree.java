@@ -221,6 +221,7 @@ public class BinaryTree {
 			Set<TreeNode> set = new HashSet<TreeNode>();
 			stack.push(root);	
 			while(stack.size() != 0){
+				root = stack.peek();
 				if(root.left != null && !set.contains(root.left)){
 					stack.push(root.left);	
 					root = root.left;
@@ -229,13 +230,8 @@ public class BinaryTree {
 				TreeNode node = stack.pop();
 				set.add(node);
 				visit(node);
-//				root = stack.peek();
-//				System.out.println(node.val);
 				if(root.right != null && !set.contains(root.right)){
 					stack.push(root.right);	
-				}
-				if(stack.size()>0) {
-					root = stack.peek();
 				}
 			}
 		}
