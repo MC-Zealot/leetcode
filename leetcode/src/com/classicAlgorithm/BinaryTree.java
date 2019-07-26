@@ -1,6 +1,8 @@
 package com.classicAlgorithm;
 
 
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Stack;
 
 import com.leetCode.CommonStructure.TreeNode;
@@ -213,9 +215,42 @@ public class BinaryTree {
 			}
 		}
 	}
-	private static TreeNode init() {
-		
-		return null;
+	public static void  inorderTraversal(TreeNode root) {
+		if(root!=null){
+			Stack<TreeNode> stack = new Stack<TreeNode>();
+			Set<TreeNode> set = new HashSet<TreeNode>();
+			stack.push(root);	
+			while(stack.size() != 0){
+				if(root.left != null && !set.contains(root.left)){
+					stack.push(root.left);	
+					root = root.left;
+					continue;
+				}
+				TreeNode node = stack.pop();
+				set.add(node);
+				visit(node);
+//				root = stack.peek();
+//				System.out.println(node.val);
+				if(root.right != null && !set.contains(root.right)){
+					stack.push(root.right);	
+				}
+				if(stack.size()>0) {
+					root = stack.peek();
+				}
+			}
+		}
+	}
+	private static  TreeNode init() {
+		TreeNode root = new TreeNode(1);
+		TreeNode node2 = new TreeNode(2);
+		TreeNode node3 = new TreeNode(5);
+		TreeNode node4 = new TreeNode(3);
+		TreeNode node5 = new TreeNode(4);
+		root.left = node2;
+		root.right = node3;
+		node2.left = node4;
+		node2.right = node5;
+		return root;
 	}
 	/**
 	 * @param args
@@ -242,6 +277,9 @@ public class BinaryTree {
 		System.out.println();
 		System.out.print(" In-Order2:");
 		iterativeInorder2(tree.getRoot());
+		System.out.println();
+		System.out.print(" In-Order3:");
+		inorderTraversal(tree.getRoot());
 		System.out.println();
 		System.out.print(" Post-Order:");
 		iterativePostorder(tree.getRoot());

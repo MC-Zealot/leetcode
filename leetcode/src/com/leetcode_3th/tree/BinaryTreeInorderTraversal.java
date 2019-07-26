@@ -1,7 +1,10 @@
 package com.leetcode_3th.tree;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.Stack;
 
 import com.leetCode.CommonStructure.TreeNode;
 
@@ -33,5 +36,31 @@ public class BinaryTreeInorderTraversal {
 		dfs(root.left, res);
 		res.add(root.val);
 		dfs(root.right, res);
+	}
+	
+	public List<Integer> inorderTraversal2(TreeNode root) {
+		List<Integer> res = new ArrayList<Integer>();
+		if(root!=null){
+			Stack<TreeNode> stack = new Stack<TreeNode>();
+			Set<TreeNode> set = new HashSet<TreeNode>();
+			stack.push(root);	
+			while(stack.size() != 0){
+				if(root.left != null && !set.contains(root.left)){
+					stack.push(root.left);	
+					root = root.left;
+					continue;
+				}
+				TreeNode node = stack.pop();
+				set.add(node);
+				res.add(node.val);
+				if(root.right != null && !set.contains(root.right)){
+					stack.push(root.right);	
+				}
+				if(stack.size()>0) {
+					root = stack.peek();
+				}
+			}
+		}
+		return res;
 	}
 }
