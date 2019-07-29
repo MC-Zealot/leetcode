@@ -33,28 +33,28 @@ import com.leetCode.CommonStructure.TreeNode;
  *
  */
 public class FlattenBinaryTreetoLinkedList {
-	Stack<TreeNode> stack = new Stack<TreeNode>();
+	
 	public void flatten(TreeNode root) {
-		if(root!=null) {
-			dfs(root);
-		}
+		Stack<TreeNode> stack = new Stack<TreeNode>();
+		dfs(root,stack);
 	}
-	public void dfs(TreeNode root) {
-		if(root.left!=null) {
-			if(root.right!=null) {
-				stack.push(root.right);	
+
+	public void dfs(TreeNode root,Stack<TreeNode> stack) {
+		if (root == null) {
+			return;
+		}
+		if (root.left != null) {
+			if (root.right != null) {
+				stack.push(root.right);
 			}
 			root.right = root.left;
-			root.left=null;
-			dfs(root.right);
+			root.left = null;
+			dfs(root.right,stack);
 		}
-		
-		if(root.right!=null){
-			dfs(root.right);
-		}
-		if(stack.size()>0) {
-			root.right=stack.pop();
-			dfs(root.right);
+		dfs(root.right,stack);
+		if (stack.size() > 0) {
+			root.right = stack.pop();
+			dfs(root.right,stack);
 		}
 	}
 }
