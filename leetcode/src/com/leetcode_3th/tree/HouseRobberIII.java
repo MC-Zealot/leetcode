@@ -42,7 +42,16 @@ public class HouseRobberIII {
 	public int rob(TreeNode root) {
         return dfs(root)[0];
     }
-    
+    /**
+     * 这就可以归结为树的递归遍历问题。对于任意一个节点，如下图三角虚线内，该子树的最大值一定是下面两个可能：
+
+root + left_left + left_right + right_left + right_right
+left + right
+所以对于任意一个节点，只要递归的调用这个关系，就可以得到解。
+     * @date Jul 29, 2019 2:07:59 PM
+     * @param root
+     * @return
+     */
     private int[] dfs(TreeNode root) {
         int dp[]={0,0};
         if(root != null){
