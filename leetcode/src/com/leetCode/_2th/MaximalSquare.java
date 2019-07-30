@@ -39,4 +39,5 @@ public class MaximalSquare {
         }
         return max * max;
     }
+	
 }
