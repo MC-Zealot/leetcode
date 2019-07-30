@@ -29,7 +29,7 @@ public class PerfectSquares {
 	 * @return
 	 */
 	public int numSquares(int n) {
-		int[] dp = new int[n+1];
+		int[] dp = new int[n+1];//数组的下标即为平方数的和，值为和的因子数
         // 将所有非平方数的结果置最大，保证之后比较的时候不被选中
         Arrays.fill(dp, Integer.MAX_VALUE);
         // 将所有平方数的结果置1
@@ -42,8 +42,13 @@ public class PerfectSquares {
             for(int b = 0; a + b * b <= n; b++){
                 // 因为a+b*b可能本身就是平方数，所以我们要取两个中较小的
                 dp[a + b * b] = Math.min(dp[a] + 1, dp[a + b * b]);
+                System.out.println("a: "+a+", b: "+b+", dp["+a+" + "+b+" * " +b+"]: "+dp[a + b * b]);
             }
         }
         return dp[n];
+	}
+	public static void main(String[] args) {
+		PerfectSquares p = new PerfectSquares();
+		System.out.println(p.numSquares(10));
 	}
 }
