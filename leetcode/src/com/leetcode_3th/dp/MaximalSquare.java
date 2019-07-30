@@ -21,31 +21,21 @@ package com.leetcode_3th.dp;
  */
 public class MaximalSquare {
 	public int maximalSquare(char[][] matrix) {
-		int res = 0;
-		for (int i = 0; i < matrix.length; i++) {
-			for (int j = 0; j < matrix[i].length; j++) {
-				if (i - 1 >= 0 && j - 1 >= 0) {
-					int left_up = matrix[i - 1][j - 1];
-					if(left_up > 0) {
-//						左边，上边都>0
-						boolean flags = true;
-						int tmp_j = j,tmp_i = i;
-						while(tmp_j>=0) {
-							if(matrix[i][tmp_j]==0) {
-								flags=false;
-								break;
-							}
-							j--;
-						}
-						
-						while(tmp_i >= 0) {
-							
-						}
-					}
+		if (matrix.length == 0)
+			return 0;
+
+		int row = matrix.length;
+		int col = matrix[0].length;
+		int[][] dp = new int[row + 1][col + 1];
+		int maxLen = 0;
+		for (int i = 1; i <= row; i++) {
+			for (int j = 1; j <= col; j++) {
+				if (matrix[i - 1][j - 1] == '1') {
+					dp[i][j] = Math.min(Math.min(dp[i - 1][j - 1], dp[i - 1][j]), dp[i][j - 1]) + 1;
+					maxLen = Math.max(maxLen, dp[i][j]);
 				}
 			}
 		}
-		//遍历一次矩阵，找到最大的值
-		return res;
+		return maxLen * maxLen;
 	}
 }
