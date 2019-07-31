@@ -106,4 +106,59 @@ public class PartitionEqualSubsetSum {
 		}
 		return dp[sum / 2];
 	}
+	
+
+/**
+大佬给出的一维数组动态规划有点懵逼。
+这里先给出二维数组的动态规划，然后给出转化为一维数组的方法。理解起来相信非常容易。
+所以这里会给出三个版本的代码：
+二维数组动态规划
+一维数组动态规划“二维转为一维的中间过程”
+一维数组动态规划“最终版”
+**/
+ 
+	/**
+	 * 
+	 * 
+ d(i, s) : 是否存在：nums区间[0, i] 中取一些元素，使其和为s
+ d(i, s) = d(i-1, s){不取nums[i]} || d(i-1, s-nums[i]){取nums[i]}
+ max(i) = nums.size()-1
+ max(s) = sum(nums)/2
+刚开始动态规划不太理解，后来发现：
+我们求dp第i行的时候dp[i][?]，我们只需要知道dp的i-1行即可dp[i-1][?]。
+也就是说，按照这个依赖关系，一直往下递推，只要得到第0行即可。
+而第0行非常容易求。dp[0][s] = true当且仅当nums[0]==s
+图解：
+     s0 s1 s2 ...              ...sum 
+ i-1 [  {s-nums[i]}  ...       s    ]
+   i [               ...       s    ]
+dp[i][s] = dp[i-1][s] || dp[i-1][s-nums[i]]
+这里要保证下标i-1>=0，所以第0行可以单独计算。
+计算方法：i==0时，s用j遍历[0, sum(nums)]区间
+发现nums[0]==s[j]，则dp[0][j]=true;
+
+	 * @date Jul 31, 2019 1:50:42 PM
+	 * @param nums
+	 * @return
+	 */
+	public boolean canPartition3(int[] nums) {
+		int sum = 0;
+		for (int e : nums) {
+			sum += e;
+		}
+		if ((sum & 1) == 1)// 奇数显然不符合条件
+			return false;
+		boolean[][] d = new boolean[nums.length][sum / 2 + 1];// sum/=2
+		for (int i = 0; i < nums.length; i++) {
+			for (int s = 0; s <= sum; s++) {// s range [0, sum(nums)>>1]
+				if (i == 0) {
+					d[i][s] = (nums[i] == s);// i==0要单独求{ nums[0]一个元素和为s }
+				}
+				else {
+					d[i][s] = d[i - 1][s] || (s - nums[i] >= 0 ? d[i - 1][s - nums[i]] : false);
+				}
+			}
+		}
+		return d[nums.length - 1][sum];// [0,nums.size()-1]区间和为sum
+	  }
 }

@@ -31,7 +31,41 @@ package com.leetcode_3th.dp;
  */
 public class TargetSum {
 	public int findTargetSumWays(int[] nums, int S) {
+		if (nums == null || nums.length == 0)
+			return 0;
+		int res[] = new int[1];
+		dfsCore(nums, 0, 0, 0, S, res);
+		return res[0];
+	}
+	private void dfsCore(int[] nums, int sum, int idx, int k, 
+			int target, int[] res) {
+		if (k == nums.length) {
+			if (sum == target)
+				res[0] += 1;
+			return;
+		}
+		for (int i = idx; i < nums.length; i++) {
+			dfsCore(nums, sum + nums[i], i + 1, k + 1, target, res);
+			dfsCore(nums, sum - nums[i], i + 1, k + 1, target, res);
+		}
+	}
+	
+	public int findTargetSumWays2(int[] nums, int S) {
+		int[] arr = new int[1];
+		helper(nums, S, arr, 0, 0);
+		return arr[0];
+	}
 
-		return 0;
+	public void helper(int[] nums, int S, int[] arr, int sum, int start) {
+		if (start == nums.length) {
+			if (sum == S) {
+				arr[0]++;
+			}
+			return;
+		}
+		// 这里千万不要加for循环，因为我们只是从index0开始
+		helper(nums, S, arr, sum - nums[start], start + 1);
+		helper(nums, S, arr, sum + nums[start], start + 1);
+
 	}
 }
