@@ -36,6 +36,27 @@ import java.util.Queue;
  *
  */
 public class CourseSchedule {
+	/**
+	 * 看到给的第二个测试用例立马就明白了，就是判断这些课程能否构成有向无环图（DAG）。而任何时候判断DAG的方法要立刻想到拓扑排序。
+
+拓扑排序是对有向无环图（DAG）而言的，对图进行拓扑排序即求其中节点的一个拓扑序列，对于所有的有向边（U, V）（由U指向V），
+在该序列中节点U都排在节点V之前。
+
+方法是每次选择入度为0的节点，作为序列的下一个节点，然后移除该节点和以从节点出发的所有边。
+
+那这个方法比较简单粗暴了：要循环N次，这个循环次数并不是遍历节点的意思，而是我们如果正常取点的话，N次就能把所有的节点都取完了，
+如果N次操作结束还没判断出来，那么就不是DAG.在这N次中，每次都找一个入度为0的点，并把它的入度变为-1，作为已经取过的点不再使用，
+
+同时把从这个点指向的点的入度都-1.
+
+这个过程中，如果找不到入度为0的点，那么说明存在环。如果N次操作，每次都操作成功的去除了一个入度为0的点，那么说明这个图是DAG.
+
+时间复杂度是O(N ^ 2)，空间复杂度是O(N)。
+	 * @date Aug 1, 2019 2:36:34 PM
+	 * @param numCourses
+	 * @param prerequisites
+	 * @return
+	 */
 	public boolean canFinish(int numCourses, int[][] prerequisites) {
 		int[][] matrix = new int[numCourses][numCourses]; // i -> j
 		int[] indegree = new int[numCourses];
