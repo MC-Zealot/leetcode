@@ -22,6 +22,15 @@ s = "2[abc]3[cd]ef", 返回 "abcabccdcdcdef".
  *
  */
 public class DecodeString {
+	/**
+	 * 用栈来解决，每次遇到“[”就把“[”之前的res塞进stack里，遇到数字就把数字塞进numStack里，
+	 * 每次遇到“]”就把stack.pop()和numStack.pop()个res连起来，然后作为新的res，等待下一次被塞进stack里
+	 * ，或者被和stack里的元素连接起来，最后返回res即可。
+
+	 * @date Aug 1, 2019 3:24:56 PM
+	 * @param s
+	 * @return
+	 */
 	public String decodeString(String s) {
 		//special case
         int len = s.length();
