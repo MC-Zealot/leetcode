@@ -1,5 +1,12 @@
 package com.leetcode_3th.others;
 
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.PriorityQueue;
+
+import com.leetCode.CommonStructure.Interval;
+
 /**
  * 
  * 给定一个会议时间安排的数组，每个会议时间都会包括开始和结束的时间 [[s1,e1],[s2,e2],...] (si < ei)，为避免会议冲突，
@@ -31,7 +38,7 @@ public class MeetingRoomsII {
 				max_len = Math.max(max_len, intervals[i][1]);
 			}
 		}
-		int[] flags = new int[max_len+1];
+		int[] flags = new int[max_len + 1];
 		
 		for (int i = 0; i < intervals.length; i++) {
 			for (int j = intervals[i][0]; j < intervals[i][1]; j++) {
@@ -44,4 +51,22 @@ public class MeetingRoomsII {
 		}
 		return res;
 	}
+	
+	public static void main(String[] args) {
+		
+		PriorityQueue<Integer> p = new PriorityQueue<Integer>();
+		StComp stComp = new StComp();
+		PriorityQueue<Interval> p2 = new PriorityQueue<Interval>(10,new StComp());
+		p.add(1);
+		p.add(3);
+		p.add(2);
+//		p.add(1);
+		System.out.println(p.peek());
+	}
+}
+class StComp implements Comparator<Interval> {
+    @Override
+    public int compare(Interval st1, Interval st2) {
+            return st1.end - st2.end;
+    }
 }
