@@ -57,8 +57,12 @@ public class QueueReconstructionbyHeight {
 					x++;
 				}
 			}
-			
-			
+			int t = 0;
+			while (res[x + k + t][0] != 0) {
+				t++;
+			}
+			res[x + k + t][0] = h;
+			res[x + k + t][1] = k;
 		}
 		return res;
 	}
