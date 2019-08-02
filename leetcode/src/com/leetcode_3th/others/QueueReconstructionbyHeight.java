@@ -76,6 +76,11 @@ public class QueueReconstructionbyHeight {
 	}
 
 	public static void main(String[] args) {
+//		[[2,4],[3,4],[9,0],[0,6],[7,1],[6,0],[7,3],[2,5],[1,1],[8,0]]
+//				输出
+//				[[6,0],[1,1],[7,1],[8,0],[9,0],[2,4],[2,5],[3,4],[7,3],[0,0]]
+//				预期结果
+//				[[6,0],[1,1],[8,0],[7,1],[9,0],[2,4],[0,6],[2,5],[3,4],[7,3]]
 		QueueReconstructionbyHeight q = new QueueReconstructionbyHeight();
 		int[][] nums = {{7,0}, {4,4}, {7,1}, {5,0}, {6,1}, {5,2}}; 
 //		ArraysCom com = new ArraysCom();
