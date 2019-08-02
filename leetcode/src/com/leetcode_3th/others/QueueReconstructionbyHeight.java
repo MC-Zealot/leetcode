@@ -46,6 +46,20 @@ public class QueueReconstructionbyHeight {
 		int[][] res = new int[people.length][];
 		ArraysCom com = new ArraysCom();
 		Arrays.sort(people,com);
+		for(int i = 0; i < people.length; i++) {
+			int h = people[i][0];
+			int k = people[i][1];
+			//前边有x个小于当前元素的元素，计算x
+			int x = 0;
+			for(int j = 0; j < k; j++) {
+				int h_tmp = res[j][0];
+				if(h_tmp<h) {
+					x++;
+				}
+			}
+			
+			
+		}
 		return res;
 	}
 	
