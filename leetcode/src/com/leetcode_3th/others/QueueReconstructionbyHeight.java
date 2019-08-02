@@ -43,7 +43,7 @@ public class QueueReconstructionbyHeight {
 	 * @return
 	 */
 	public int[][] reconstructQueue(int[][] people) {
-		int[][] res = new int[people.length][];
+		int[][] res = new int[people.length][2];
 		ArraysCom com = new ArraysCom();
 		Arrays.sort(people,com);
 		for(int i = 0; i < people.length; i++) {
@@ -53,11 +53,11 @@ public class QueueReconstructionbyHeight {
 			int x = 0;
 			for(int j = 0; j < k; j++) {
 				int h_tmp = res[j][0];
-				if(h_tmp<h) {
+				if(h_tmp!=0 && h_tmp<h) {
 					x++;
 				}
 			}
-			int t = 0;
+			int t = 0;//被占就++
 			while (res[x + k + t][0] != 0) {
 				t++;
 			}
@@ -66,12 +66,27 @@ public class QueueReconstructionbyHeight {
 		}
 		return res;
 	}
-	
+	class ArraysCom implements Comparator<int[]> {
+
+		@Override
+		public int compare(int[] o1, int[] o2) {
+			return o1[0] - o2[0];
+		}
+		
+	}
+
 	public static void main(String[] args) {
 		QueueReconstructionbyHeight q = new QueueReconstructionbyHeight();
 		int[][] nums = {{7,0}, {4,4}, {7,1}, {5,0}, {6,1}, {5,2}}; 
-		ArraysCom com = new ArraysCom();
-		Arrays.sort(nums,com);
+//		ArraysCom com = new ArraysCom();
+//		Arrays.sort(nums,com);
+		for(int i = 0; i < nums.length; i++) {
+			for(int j = 0; j < nums[0].length; j++) {
+				System.out.print(nums[i][j]+" ");
+			}
+			System.out.println();
+		}
+		nums=q.reconstructQueue(nums);
 		for(int i = 0; i < nums.length; i++) {
 			for(int j = 0; j < nums[0].length; j++) {
 				System.out.print(nums[i][j]+" ");
@@ -79,12 +94,4 @@ public class QueueReconstructionbyHeight {
 			System.out.println();
 		}
 	}
-}
-class ArraysCom implements Comparator<int[]> {
-
-	@Override
-	public int compare(int[] o1, int[] o2) {
-		return o1[0] - o2[0];
-	}
-	
 }
