@@ -1,4 +1,4 @@
-package com.leetcode_3th.others.heap;
+package com.leetcode_3th.others.divide_conquer;
 
 import java.util.Arrays;
 
