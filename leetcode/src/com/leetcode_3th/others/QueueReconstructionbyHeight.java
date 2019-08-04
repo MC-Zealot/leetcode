@@ -36,17 +36,26 @@ The number of people is less than 1,100.
  */
 public class QueueReconstructionbyHeight {
 	/**
-	 * 1、按身高从小到大排序
- [4,4], [5,0], [5,2], [6,1], [7,0], [7,1]
-
-2、从小到大占坑，规则：当前元素放在k的位置，如果前边有x个小于当前元素的元素，则放在x+k，如果x+k被占了，往后+1循环
+	 * 1、按身高从小到大排序 [4,4], [5,0], [5,2], [6,1], [7,0], [7,1]
+	 * 
+	 * 2、从小到大占坑，规则：当前元素放在k的位置，如果前边有x个小于当前元素的元素，则放在x+k，如果x+k被占了，往后+1循环
+	 * 
+	 * 
+	 * The key to solve this problem is finding the start point of reconstruction.
+	 * For this problem, we can start adding the largest element first. The basic
+	 * idea is to keep adding the largest element each time, until all elements are
+	 * in place.
+	 * 就是依然按照ｈ降序排序，但是如果ｈ相等则按照ｋ升序排序．然后开一个新数组，因为数组按照降序排序，
+	 * 
+	 * 所以每次只需要将元素插入到新数组的k的位置即可．两种方法时间复杂度都是O(n*2)，但是第二种更容易理解和实现
+	 * 
 	 * @date Aug 2, 2019 5:15:03 PM
 	 * @param people
 	 * @return
 	 */
 	public int[][] reconstructQueue(int[][] people) {
 	    int[][] result = new int[people.length][];
-	    Arrays.sort(people, new Comparator<int[]>(){//身高从高到底排序，如果身高相等，则按照下标从低到高排序
+	    Arrays.sort(people, new Comparator<int[]>(){//身高h从高到底排序，如果身高相等，则按照下标k从低到高排序
 	        public int compare(int[] a1, int[] a2){
 	            if(a1[0]!=a2[0]){
 	                return a2[0]-a1[0];
@@ -59,12 +68,13 @@ public class QueueReconstructionbyHeight {
 	    List<int[]> list = new ArrayList<int[]>();
 	 
 	    for(int i=0; i<people.length; i++){
-	        int[] arr = people[i];
-	        System.out.println(arr[1]+": "+arr[0] +", "+arr[1]);
-	        list.add(arr[1],arr);//如果序号相同，则加在当前序号的前边，有点像，数组，每个元素是一个链表，加到了链表的头结点
+	        int[] p = people[i];
+	        System.out.println(p[1]+": "+p[0] +", "+p[1]);//相同下标，身高高的在后边
+	        list.add(p[1],p);//如果序号相同，则加在当前序号的前边，有点像，数组，每个元素是一个链表，加到了链表的头结点
 	    }
+	    //
 	 System.out.println(list.toString());
-	    for(int i=0; i<people.length; i++){
+	    for(int i=0; i<result.length; i++){
 	        result[i]=list.get(i);
 	    }
 	 
@@ -93,18 +103,27 @@ public class QueueReconstructionbyHeight {
 		int[][] nums = {{8,2},{4,2},{4,5},{2,0},{7,2},{1,4},{9,1},{3,1},{9,0},{1,0}};
 //		ArraysCom com = new ArraysCom();
 //		Arrays.sort(nums,com);
-		for(int i = 0; i < nums.length; i++) {
-			for(int j = 0; j < nums[0].length; j++) {
-				System.out.print(nums[i][j]+" ");
-			}
-			System.out.println();
+//		for(int i = 0; i < nums.length; i++) {
+//			for(int j = 0; j < nums[0].length; j++) {
+//				System.out.print(nums[i][j]+" ");
+//			}
+//			System.out.println();
+//		}
+//		nums=q.reconstructQueue(nums);
+//		for(int i = 0; i < nums.length; i++) {
+//			for(int j = 0; j < nums[0].length; j++) {
+//				System.out.print(nums[i][j]+" ");
+//			}
+//			System.out.println();
+//		}
+		List<int[]> list = new ArrayList<int[]>();
+		int[] p = {1,0};//最高的前边一定是0个比他还高的，所以用k当做下标，是必须从0开始
+		int[] p1 = {1,1};
+		list.add(p[1], p);
+		list.add(p1[1], p1);
+		for(int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i)[0]+", "+list.get(i)[1]);
 		}
-		nums=q.reconstructQueue(nums);
-		for(int i = 0; i < nums.length; i++) {
-			for(int j = 0; j < nums[0].length; j++) {
-				System.out.print(nums[i][j]+" ");
-			}
-			System.out.println();
-		}
+		
 	}
 }
