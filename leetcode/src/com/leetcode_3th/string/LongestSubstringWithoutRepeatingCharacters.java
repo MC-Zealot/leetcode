@@ -35,6 +35,28 @@ public class LongestSubstringWithoutRepeatingCharacters {
 		return maxLen;
 	}
 
+	/**
+	 * 
+	 * @date Aug 7, 2019 2:31:36 PM
+	 * @param s
+	 * @return
+	 */
+	public int lengthOfLongestSubstring2(String s) {
+		Map<Character, Integer> map = new HashMap<Character, Integer>();
+		int start = 0, res = 0, tmp = 0;
+		for (int curr = 0; curr < s.length(); curr++) {
+			if (map.containsKey(s.charAt(curr)) && map.get(s.charAt(curr)) >= start) {
+				start = map.get(s.charAt(curr)) + 1;
+				tmp = curr - start + 1;
+			} else {
+				tmp++;
+			}
+			map.put(s.charAt(curr), curr);
+			res = Math.max(res, tmp);
+		}
+		return res;
+	}
+
 //	"tmmzuxt"
 	public static void main(String[] args) {
 		LongestSubstringWithoutRepeatingCharacters l = new LongestSubstringWithoutRepeatingCharacters();
