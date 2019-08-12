@@ -94,7 +94,7 @@ public class ThreeSum {
 	 * @param nums
 	 * @return
 	 */
-	public List<List<Integer>> threeSum2(int[] nums) {
+	public List<List<Integer>> threeSum4(int[] nums) {
 		List<List<Integer>> res = new ArrayList<List<Integer>>();
 		if (nums.length <= 2) {
 			return res;
@@ -105,19 +105,13 @@ public class ThreeSum {
 		
 		for (int i = 0; i < nums.length; i++) {
 			target = -nums[i];
-			System.out.println(target);
 			Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-			for (int j = 0; j < nums.length; j++) {
+			for (int j = i+1; j < nums.length; j++) {
 				if (i == j) {
 					continue;
 				}
 				if (map.containsKey(target - nums[j])) {
-					int[] tmp = new int[3];
-					tmp[0] = nums[i];
-					tmp[1] = target - nums[j];
-					tmp[2] = nums[j];
-					Arrays.sort(tmp);
-					String str = tmp[0] + "\t" + tmp[1] + "\t" + tmp[2];
+					String str = nums[i] + "\t" + (target - nums[j]) + "\t" + nums[j];
 					tmpSet.add(str);
 				}
 				map.put(nums[j], j);
@@ -190,7 +184,54 @@ public class ThreeSum {
             }  
         }  
     }
-
+    /**
+     * AC
+     * @date Aug 12, 2019 1:08:37 PM
+     * @param nums
+     * @return
+     */
+    public List<List<Integer>> threeSum2(int[] nums) {
+		List<List<Integer>> res = new ArrayList<List<Integer>>();
+		if (nums.length <= 2) {
+			return res;
+		}
+		int target = 0;
+		Arrays.sort(nums);
+		Set<String> tmpSet = new HashSet<String>();
+		
+		for (int i = 0; i < nums.length; i++) {
+			 if(i > 0 && nums[i] == nums[i-1]) {
+				 continue;
+			 }
+			target = -nums[i];
+			Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+			for (int j = i + 1; j < nums.length; j++) {
+				if (i == j) {
+					continue;
+				}
+				if (map.containsKey(target - nums[j])) {
+					int[] tmp = new int[3];
+					tmp[0] = nums[i];
+					tmp[1] = target - nums[j];
+					tmp[2] = nums[j];
+					Arrays.sort(tmp);
+					String str = tmp[0] + "\t" + tmp[1] + "\t" + tmp[2];
+					tmpSet.add(str);
+				}
+				map.put(nums[j], j);
+			}
+			
+		}
+		for(String s: tmpSet){
+			String[] ss = s.split("\t");
+			List<Integer> list = new ArrayList<Integer>();
+			for(String i:ss){
+				list.add(Integer.parseInt(i));
+			}
+			res.add(list);
+		}
+		return res;
+	}
 	public static void main(String[] args) {
 		ThreeSum s = new ThreeSum();
 //		int[] a = { -1, 0, 1, 2, -1, -4 };
