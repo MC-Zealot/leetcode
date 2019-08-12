@@ -157,7 +157,7 @@ public class ThreeSum {
     }  
       
     /**
-     * 二分查找的前提是数组有序，这需要O(nlogn)的时间复杂度
+     * 二分查找的前提是数组有序，这需要O(n^2)的时间复杂度
      * @date Jul 17, 2019 10:27:09 AM
      * @param num
      * @param begin
