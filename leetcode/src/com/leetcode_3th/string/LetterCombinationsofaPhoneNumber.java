@@ -1,7 +1,9 @@
 package com.leetcode_3th.string;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 给定一个仅包含数字 2-9 的字符串，返回所有它能表示的字母组合。
@@ -90,9 +92,48 @@ public class LetterCombinationsofaPhoneNumber {
 			idx-=1;
 		}
 	}
+	
+	
+	
+	Map<Character, String> map = new HashMap<Character, String>();
+
+
+	public List<String> letterCombinations2(String digits) {
+		map.put('2',"abc");
+		map.put('3',"def");
+		map.put('4',"ghi");
+		map.put('5',"jkl");
+		map.put('6',"mno");
+		map.put('7',"pqrs");
+		map.put('8',"tuv");
+		map.put('9',"wxyz");
+		List<String> res = new ArrayList<String>();  
+		if(digits==null||digits.length()==0){
+		return res;
+		}
+		dfs(digits, 0, res, new StringBuffer());
+		return res;
+	}
+
+
+	public void dfs(String digits, int curr,List<String> res, StringBuffer sb){
+			if(curr>digits.length()){
+				return;
+			}
+			if(sb.length() == digits.length()){
+				res.add(sb.toString());
+				return;
+			}
+			for(int j = 0; j < map.get(digits.charAt(curr)).length(); j++){
+		 		sb.append(map.get(digits.charAt(curr)).charAt(j));
+		 		dfs(digits, curr+1, res, sb);
+		 		sb.deleteCharAt(sb.length()-1);
+		 	}
+	}
+	
 	public static void main(String[] args) {
 		LetterCombinationsofaPhoneNumber l = new LetterCombinationsofaPhoneNumber();
 		
-		System.out.println(l.letterCombinations("7").toString());
+		System.out.println(l.letterCombinations2("23").toString());
 	}
 }
