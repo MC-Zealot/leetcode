@@ -95,10 +95,16 @@ public class LetterCombinationsofaPhoneNumber {
 	
 	
 	
-	Map<Character, String> map = new HashMap<Character, String>();
+	
 
-
+/**
+ * deleteCharAt StringBuffer的方法
+ * @date Aug 12, 2019 2:41:09 PM
+ * @param digits
+ * @return
+ */
 	public List<String> letterCombinations2(String digits) {
+		Map<Character, String> map = new HashMap<Character, String>();
 		map.put('2',"abc");
 		map.put('3',"def");
 		map.put('4',"ghi");
@@ -111,12 +117,12 @@ public class LetterCombinationsofaPhoneNumber {
 		if(digits==null||digits.length()==0){
 		return res;
 		}
-		dfs(digits, 0, res, new StringBuffer());
+		dfs(digits, 0, res, new StringBuffer(),map);
 		return res;
 	}
 
 
-	public void dfs(String digits, int curr,List<String> res, StringBuffer sb){
+	public void dfs(String digits, int curr,List<String> res, StringBuffer sb, Map<Character, String> map){
 			if(curr>digits.length()){
 				return;
 			}
@@ -126,7 +132,7 @@ public class LetterCombinationsofaPhoneNumber {
 			}
 			for(int j = 0; j < map.get(digits.charAt(curr)).length(); j++){
 		 		sb.append(map.get(digits.charAt(curr)).charAt(j));
-		 		dfs(digits, curr+1, res, sb);
+		 		dfs(digits, curr+1, res, sb,map);
 		 		sb.deleteCharAt(sb.length()-1);
 		 	}
 	}
