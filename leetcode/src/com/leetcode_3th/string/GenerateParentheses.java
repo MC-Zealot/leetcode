@@ -109,9 +109,44 @@ public class GenerateParentheses {
 			helper(l, r - 1, item + ")", res);
 	}
 	
-	
+	public List<String> generateParenthesis3(int n) {
+		List<String> res = new ArrayList<String>();
+		if(n == 0){
+			return res;
+		}
+		dfs(n, new String(), res, 0, 0);
+		return res;
+	}
+	/**
+	 * 递归
+	 * @date Aug 13, 2019 11:00:21 AM
+	 * @param n
+	 * @param tmp
+	 * @param res
+	 * @param l
+	 * @param r
+	 */
+	public void dfs(int n, String tmp, List<String> res, int l, int r) {
+
+		if (l < r) {
+			return;
+		}
+		if (tmp.length() == 2 * n) {
+			res.add(tmp);
+			return;
+		}
+
+		if (l < n) {
+			dfs(n, tmp + "(", res, l + 1, r);
+		}
+		if (r < n) {
+			dfs(n, tmp + ")", res, l, r + 1);
+		}
+	}
+
+
 	public static void main(String[] args) {
 		GenerateParentheses gp = new GenerateParentheses();
-		System.out.println(gp.generateParenthesis(3));
+		System.out.println(gp.generateParenthesis3(3));
 	}
 }
