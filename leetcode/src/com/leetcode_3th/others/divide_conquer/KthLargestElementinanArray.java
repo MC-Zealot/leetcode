@@ -1,6 +1,7 @@
 package com.leetcode_3th.others.divide_conquer;
 
 import java.util.Arrays;
+import java.util.PriorityQueue;
 
 /**
  * 在未排序的数组中找到第 k 个最大的元素。请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。
@@ -27,6 +28,23 @@ public class KthLargestElementinanArray {
 		Arrays.sort(nums);
 		return nums[nums.length - k];
 	}
+	
+	/**
+	 * 用小顶堆
+	 * 空间复杂度O(k)
+	 * @param nums
+	 * @param k
+	 * @return
+	 * Created on: Feb 23, 2020 12:22:25 PM
+	 */
+	public int findKthLargest2(int[] nums, int k) {
+        PriorityQueue<Integer> p = new PriorityQueue<Integer>();
+        for(int i = 0 ; i < nums.length; i++){
+            p.add(nums[i]);
+            if(p.size()>k) p.poll();
+        }
+        return p.poll();
+    }
 	/**
 	 * avr: O(n) worst O(n^2)
 	 * @date 2016年7月3日 下午11:10:46
@@ -44,6 +62,9 @@ public class KthLargestElementinanArray {
 	 * 一轮过后记得将枢纽值赋回分界点。如果这个分界点是k，说明分界点的数就是第k个数。
 	 * 
 	 * 否则，如果分界点大于k，则在左半边做同样的搜索。如果分界点小于k，则在右半边做同样的搜索。
+	 * 
+	 * 时间复杂度O(n)
+	 * 空间复杂度O(1)
 	 * @date Aug 2, 2019 12:48:05 PM
 	 * @param arr
 	 * @param k
@@ -93,6 +114,6 @@ public class KthLargestElementinanArray {
 	public static void main(String[] args) {
 		KthLargestElementinanArray k = new KthLargestElementinanArray();
 		int[] nums= {3,2,3,1,2,4,5,5,6};
-		System.out.println(k.findKthLargest(nums, 4));
+		System.out.println(k.findKthLargest2(nums, 4));
 	}
 }
