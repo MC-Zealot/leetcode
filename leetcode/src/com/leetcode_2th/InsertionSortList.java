@@ -67,6 +67,101 @@ public class InsertionSortList {
 		}
 		return helper.next;
 	}  
+	
+	
+
+
+	 public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+	        if(headA==null || headB==null) return null;
+	        ListNode pa = headA, pb = headB;
+	        int counta = 0, countb = 0;
+	        
+	        while(pa!=null){
+	            counta++;
+	            pa = pa.next;
+	        }
+	        while(pb!=null){
+	            countb++;
+	            pb = pb.next;
+	        }
+	        
+	        pa = headA;
+	        pb = headB;
+	        int dif = Math.abs(counta-countb);
+	        if(counta>countb){
+	            while(dif!=0){
+	                pa = pa.next;
+	                dif--;
+	            }
+	        }else{
+	            while(dif!=0){
+	                pb = pb.next;
+	                dif--;
+	            }
+	        }
+	        while(pa!=pb){
+	            pa = pa.next;
+	            pb = pb.next;
+	        }
+	        return pa;
+	        
+	    }
+	 public class ListNode {
+			public int val;
+			public ListNode next;
+
+			public ListNode(int x) {
+				val = x;
+				next = null;
+			}
+		}
+	 public boolean isCross(ListNode list1, ListNode list2) {
+		 boolean ret = false;
+		 if(list1 == null || list2 == null) {
+			 return ret;
+		 }
+		 ListNode p1=list1;
+		 ListNode p2=list2;
+		 int count1 = 0;//第一个链表长度
+		 int count2 = 0;//第二个链表长度
+		 while(p1!=null) {
+			 count1++;
+			 p1=p1.next;
+		 }
+		 while(p2!=null) {
+			 count2++;
+			 p2=p2.next;
+		 }
+		 p1=list1;
+		 p2=list2;
+		 //计算差值
+		 int diff = count1 - count2;
+		 if(diff < 0) {
+			 diff = -diff;
+		 }
+		 //根据差值，找到两个指针的同一起始点
+		 if(count1>count2) {
+			 while(diff!=0) {
+				 p1=p1.next;
+				 diff--;
+			 }
+		 }else {
+			 while(diff!=0) {
+				 p2=p2.next;
+				 diff--;
+			 }
+		 }
+		 //双指针同时遍历，判断是否交叉
+		 while(p1!=p2) {
+			 p1=p1.next;
+			 p2=p2.next;
+		 }
+		 //如果p1不是空，（没有遍历到最后）
+		 if(p1!=null) {
+			 ret=true;
+		 }
+		 return ret;
+	 }
 	public static void main(String[] args) {
 //		InsertionSortList is = new InsertionSortList();
 //		ListNode l1 = new ListNode(3);

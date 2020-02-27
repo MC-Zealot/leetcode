@@ -85,4 +85,22 @@ public class ReverseLinkedList {
 
         return newHead;
 	}
+	/**
+	 * 
+	 * @param head
+	 * @return
+	 * Created on: Feb 28, 2020 1:49:16 AM
+	 */
+	public ListNode reverseList4(ListNode head) {
+        if(head == null) return null;
+        ListNode p = head;
+        ListNode newHead = head;
+        while(p.next != null){
+            ListNode tmp = new ListNode(p.next.val);
+            p.next = p.next.next;
+            tmp.next = newHead;
+            newHead = tmp;
+        }
+        return newHead;
+    }
 }
