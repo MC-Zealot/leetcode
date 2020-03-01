@@ -1,26 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
-		<item value="415" key="DIALOG_Y_ORIGIN"/>
-		<item value="724" key="DIALOG_X_ORIGIN"/>
+		<item key="DIALOG_Y_ORIGIN" value="415"/>
+		<item key="DIALOG_X_ORIGIN" value="724"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
-		<item value="false" key="casesensitive"/>
-		<item value="false" key="incremental"/>
-		<item value="true" key="wrap"/>
-		<item value="false" key="wholeword"/>
+		<item key="isRegEx" value="false"/>
+		<item key="selection" value="scn_adid"/>
+		<item key="casesensitive" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="wrap" value="true"/>
+		<item key="wholeword" value="false"/>
 		<list key="findhistory">
-			<item value="findBottomAndTurnBack"/>
-			<item value="job"/>
-			<item value="followRatio"/>
-			<item value="historyuid_ratio"/>
-			<item value="EstimateReducer"/>
-			<item value="unit"/>
-			<item value="GMMProcessor"/>
-			<item value="special"/>
-			<item value="debug"/>
+			<item value="scn_adid"/>
+			<item value="find"/>
+			<item value="ostringstream"/>
+			<item value="exp_type_3"/>
+			<item value="cmt_exp_type_1"/>
+			<item value="white_list1"/>
+			<item value="it_interest_type"/>
+			<item value="interest_type"/>
+			<item value="hadExplicit_and_no_filter_flag"/>
+			<item value="faraday_strategy_content_targeting_white_list"/>
+			<item value="hot_search_exp_type_1"/>
+			<item value="faraday_strategy_configs"/>
+			<item value="comment_target_enable"/>
+			<item value="scn"/>
+			<item value="get_content_targeting_white_black_list"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>
@@ -34,10 +40,10 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="294" key="DIALOG_WIDTH"/>
-		<item value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont" key="DIALOG_FONT_NAME"/>
-		<item value="408" key="DIALOG_HEIGHT"/>
-		<item value="198" key="DIALOG_Y_ORIGIN"/>
-		<item value="765" key="DIALOG_X_ORIGIN"/>
+		<item key="DIALOG_WIDTH" value="294"/>
+		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+		<item key="DIALOG_HEIGHT" value="408"/>
+		<item key="DIALOG_Y_ORIGIN" value="314"/>
+		<item key="DIALOG_X_ORIGIN" value="1131"/>
 	</section>
 </section>

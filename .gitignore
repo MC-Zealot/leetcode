@@ -8,6 +8,7 @@
 *.iml
 out
 gen
+.metadata
 
 ### Maven template
 target/
@@ -30,6 +31,6 @@ tmp/
 *.resources
 *.class
 #
-\.metadata
+.metadata
 *.xml
 *.xmi

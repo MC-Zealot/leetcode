@@ -4,12 +4,12 @@
 		<item value="leetcode"/>
 	</list>
 	<section name="WorkbenchPreferenceDialogSettings">
-		<item value="0" key="DIALOG_Y_ORIGIN"/>
-		<item value="-493" key="DIALOG_X_ORIGIN"/>
+		<item key="DIALOG_Y_ORIGIN" value="140"/>
+		<item key="DIALOG_X_ORIGIN" value="0"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="675" key="dialogHeight"/>
-		<item value="1200" key="dialogWidth"/>
+		<item key="dialogHeight" value="-1"/>
+		<item key="dialogWidth" value="-1"/>
 		<list key="textEntries">
 		</list>
 		<list key="orderedElements">
@@ -20,8 +20,8 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.internal.dialogs.WorkbenchEditorsDialog">
-		<item value="0" key="sort"/>
-		<item value="false" key="allPersp"/>
+		<item key="sort" value="0"/>
+		<item key="allPersp" value="false"/>
 		<list key="columns">
 			<item value="199"/>
 			<item value="399"/>
@@ -34,7 +34,7 @@
 		</list>
 	</section>
 	<section name="ImportExportAction">
-		<item value="org.eclipse.cdt.ui.wizards.MakeProjFromExisting" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
+		<item key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID" value="org.eclipse.ui.wizards.import.ExternalProject"/>
 		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
 			<item value="org.eclipse.ui.Basic"/>
 			<item value="org.eclipse.cdt.ui.importWizardCategory"/>

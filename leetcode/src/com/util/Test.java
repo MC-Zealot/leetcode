@@ -319,6 +319,8 @@ public class Test {
 		print_array(a);
 		Test t = new Test();
 		t.qs2(0, a.length-1);
+		String s ="13";
+		
 		print_array(a);
 //		String ret = t.addStrings("6", "501");
 //		System.out.println(ret);
