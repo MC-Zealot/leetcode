@@ -30,6 +30,6 @@ tmp/
 *.resources
 *.class
 #
-.metadata
+\.metadata
 *.xml
 *.xmi
