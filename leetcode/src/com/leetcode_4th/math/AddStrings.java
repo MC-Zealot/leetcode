@@ -1,5 +1,9 @@
 package com.leetcode_4th.math;
 
+import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 
  * @author zealot
@@ -69,4 +73,16 @@ public class AddStrings {
         }
         return sb.reverse().toString();
     }
+	public static void main(String[] args) {
+		List<Character> res = new ArrayList<Character>(10);//保存所有的非字母
+		System.out.println(res.size());
+		for(int i = 0; i < 10; i++){//初始化res
+            res.add('0');
+        }
+		System.out.println(res.size());
+		for(int i = 0; i < res.size(); i++) {
+			res.set(i, 'a');
+			System.out.println(res.get(i));
+		}
+	}
 }
