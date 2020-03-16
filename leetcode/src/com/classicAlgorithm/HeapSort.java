@@ -16,7 +16,6 @@ public class HeapSort {
 			heapAdjust(arr, 0, i); // 交换之后，需要重新检查堆是否符合大顶堆，不符合则要调整
 		}
 	}
-
 	/**
 	 * 构建堆的过程
 	 * 
@@ -44,19 +43,17 @@ public class HeapSort {
 		}
 		arr[i] = father;
 	}
-
 	// 获取到左孩子结点
 	private static int leftChild(int i) {
 		return 2 * i + 1;
 	}
-
 	// 交换元素位置
 	private static void swap(int[] arr, int index1, int index2) {
 		int tmp = arr[index1];
 		arr[index1] = arr[index2];
 		arr[index2] = tmp;
 	}
-	
+
 	public static void main(String[] args) {
 		int[] arr = { 50, 10, 90, 30, 70, 40, 80, 60, 20 };
 		System.out.println("排序之前：");
