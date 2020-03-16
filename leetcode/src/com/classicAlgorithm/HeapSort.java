@@ -30,7 +30,7 @@ public class HeapSort {
 			child = leftChild(i);
 
 			// 如果左子树小于右子树，则需要比较右子树和父节点
-			if (child != n - 1 && arr[child] < arr[child + 1]) {
+			if (child < n - 1 && arr[child] < arr[child + 1]) {
 				child++; // 序号增1，指向右子树
 			}
 
@@ -55,7 +55,7 @@ public class HeapSort {
 	}
 
 	public static void main(String[] args) {
-		int[] arr = { 50, 10, 90, 30, 70, 40, 80, 60, 20 };
+		int[] arr = { 50, 10, 90, 30, 70, 90, 90, 40, 80, 60, 20 };
 		System.out.println("排序之前：");
 		for (int i = 0; i < arr.length; i++) {
 			System.out.print(arr[i] + " ");
