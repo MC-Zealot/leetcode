@@ -60,7 +60,7 @@ public class MyHeapSort {
 		for (int i = 0; i < arr.length; i++) {
 			System.out.print(arr[i] + " ");
 		}
-
+		String s = "123";
 		// 堆排序
 		heapSort(arr);
 
