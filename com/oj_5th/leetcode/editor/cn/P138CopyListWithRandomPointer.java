@@ -70,6 +70,9 @@
 package com.oj_5th.leetcode.editor.cn;
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 /*
 *copy-list-with-random-pointer
 *2021-06-20 17:29:10
@@ -95,12 +98,30 @@ class Node {
 
 class Solution {
     public Node copyRandomList(Node head) {
-        Node ret = null;
+        Node dummy = null;
         if(head == null){
-            return ret;
+            return dummy;
         }
-        //
-        return ret;
+        Map<Node, Node> cacheMap = new HashMap<>();//旧节点，新节点
+        dummy = new Node(-1);
+        Node newPointer = dummy;//新节点指针
+        Node oldPointer = head;//旧节点指针
+        while(oldPointer!=null){
+            int val = oldPointer.val;
+            Node tmp = new Node(val);
+            newPointer.next = tmp;
+            newPointer = newPointer.next;
+            cacheMap.put(oldPointer, newPointer);
+            oldPointer = oldPointer.next;
+        }
+        newPointer = dummy.next;
+        oldPointer = head;
+        while(oldPointer!= null){
+            newPointer.random = cacheMap.get(oldPointer.random);
+            oldPointer = oldPointer.next;
+            newPointer = newPointer.next;
+        }
+        return dummy.next;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

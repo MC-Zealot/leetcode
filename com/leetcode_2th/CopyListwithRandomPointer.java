@@ -27,7 +27,7 @@ public class CopyListwithRandomPointer {
 		        return head;  
 		    HashMap<RandomListNode,RandomListNode> map = new HashMap<RandomListNode,RandomListNode>();  
 		    RandomListNode newHead = new RandomListNode(head.label);  
-		    map.put(head,newHead);  
+		    map.put(head,newHead);  //原始节点，新节点
 		    RandomListNode pre = newHead;  
 		    RandomListNode node = head.next;  
 		    while(node!=null)  
