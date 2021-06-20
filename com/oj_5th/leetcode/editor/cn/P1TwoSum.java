@@ -50,8 +50,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
-*two-sum
-*2021-06-20 17:03:55
+*   1 two-sum
+*   2021-06-20 17:03:55
 */
 public class P1TwoSum{
     public static void main(String[] args) {
