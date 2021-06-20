@@ -52,7 +52,7 @@ public class WordBreak {
 	}
 	public static void main(String[] args) {
 		WordBreak w = new WordBreak();
-		String s = "leetcode";
+		String s = "oj";
 		List<String> wordDict = new ArrayList<String>();
 		wordDict.add("leet");
 		wordDict.add("code");

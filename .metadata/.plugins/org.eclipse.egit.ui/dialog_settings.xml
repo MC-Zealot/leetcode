@@ -4,7 +4,7 @@
 	<item value="/Users/Zealot/Documents/MyWorkSpace/.git" key="GitSelectRepositoryPage.lastRepository"/>
 	<item value="true" key="CommitDialog.showUntracked"/>
 	<list key="RepositorySelectionPage.UsedUris">
-		<item value="https://github.com/MC-Zealot/leetcode.git"/>
+		<item value="https://github.com/MC-Zealot/oj.git"/>
 		<item value="file:////Users/Zealot/git/leetcode/.git"/>
 		<item value="https://github.com/MC-Zealot/leetcode"/>
 		<item value="file:////Users/Zealot/Documents/MyWorkSpace/.git"/>
