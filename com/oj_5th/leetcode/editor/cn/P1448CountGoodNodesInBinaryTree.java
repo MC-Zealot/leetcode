@@ -68,18 +68,12 @@ public class P1448CountGoodNodesInBinaryTree{
  *     }
  * }
  */
+// [1448] count-good-nodes-in-binary-tree
 class Solution {
     public int goodNodes(TreeNode root) {
         if (root == null) {
             return 0;
         }
-
-        //一边比较一边遍历树
-        //前序遍历
-        //先算每个节点上边（包括自己），最大的节点是什么，值是多少
-//        最大的值与该节点比较
-
-
         return preRun(root, root.val);
     }
     public int preRun(TreeNode node, int max) {
