@@ -68,15 +68,6 @@ public class P2AddTwoNumbers{
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode ret = new ListNode(-1);
-        if(l1==null&&l2==null){
-            return ret.next;
-        }
-        if(l1==null){
-            return l2;
-        }
-        if(l2==null){
-            return l1;
-        }
         ListNode p = ret;
         //双指针开始循环，定义进位标志
         int carry = 0;
