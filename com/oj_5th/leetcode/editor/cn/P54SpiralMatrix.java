@@ -1,4 +1,4 @@
-//给你一个 m 行 n 列的矩阵 matrix ，请按照 顺时针螺旋顺序 ，返回矩阵中的所有元素。 
+package leetcode.editor.cn;//给你一个 m 行 n 列的矩阵 matrix ，请按照 顺时针螺旋顺序 ，返回矩阵中的所有元素。
 //
 // 
 //
@@ -30,7 +30,7 @@
 // 👍 811 👎 0
 
 
-package com.oj_5th.leetcode.editor.cn;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,21 +46,16 @@ public class P54SpiralMatrix{
         int[][] input = {{1,2,3},{4,5,6},{7,8,9}};
         solution.spiralOrder(input);
     }
-    //[54] spiral-matrix
-    //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
 
+    //leetcode submit region begin(Prohibit modification and deletion)
+    //[54] spiral-matrix
+class Solution {
         int h = 0;//横向
         int s = 0;//纵向
         int d = 1;
         public List<Integer> spiralOrder(int[][] matrix) {
             List<Integer> res = new ArrayList<Integer>();
             int[][] flags = new int[matrix.length][matrix[0].length];
-            // for(int i = 0; i < flags.length;i++){
-            //     for(int j = 0; j < matrix[0].length; j++){
-            //         flags[i][j]=0;
-            //     }
-            // }
             while (res.size() < matrix[0].length * matrix.length) {
                 //run
                 flags = run(matrix, flags, res);
@@ -72,7 +67,6 @@ class Solution {
             }
             return res;
         }
-
         public int[][] run(int[][] matrix, int[][] flags, List<Integer> res) {
             int ss = s;
             int hh = h;
@@ -93,7 +87,7 @@ class Solution {
                     }
                 }
             } else if (d == 3) {//h动，s不动
-                for (int i = matrix[0].length; i >= 0; i--) {
+                for (int i = matrix[0].length - 1; i >= 0; i--) {
                     if (flags[ss][i] == 0) {
                         res.add(matrix[ss][i]);
                         flags[ss][i] = 1;
@@ -101,15 +95,14 @@ class Solution {
                     }
                 }
             } else {//s动，h不动
-                for (int i = matrix.length; i >= 0; i--) {
+                for (int i = matrix.length - 1; i >= 0; i--) {
                     if (flags[i][hh] == 0) {
                         res.add(matrix[i][hh]);
                         flags[i][hh] = 1;
                         s=i;
                     }
                 }
-            }
-            return flags;
+            }  return flags;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

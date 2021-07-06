@@ -44,7 +44,7 @@
 // 👍 11372 👎 0
 
 
-package com.oj_5th.leetcode.editor.cn;
+package leetcode.editor.cn;
 
 import java.util.HashMap;
 import java.util.Map;
