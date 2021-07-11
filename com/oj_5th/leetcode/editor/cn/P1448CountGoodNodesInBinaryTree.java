@@ -42,7 +42,8 @@
 // 👍 22 👎 0
 
 
-package com.oj_5th.leetcode.editor.cn;
+package oj_5th.leetcode.editor.cn;
+import com.leetCode.CommonStructure.TreeNode;
 /*
 *   [1448] count-good-nodes-in-binary-tree
 *   2021-07-05 21:45:29
