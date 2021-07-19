@@ -97,7 +97,6 @@ class Solution {
                 j++;
                 continue;
             }
-
             if(n1<=n2){
                 l.add(n1);
                 l.add(n2);
@@ -105,24 +104,19 @@ class Solution {
                 l.add(n2);
                 l.add(n1);
             }
-
             i++;
             j++;
         }
-
         while (i < nums1.length) {
             int n1 = nums1[i];
             l.add(n1);
             i++;
         }
-
         while (j < nums2.length) {
             int n2 = nums2[j];
             l.add(n2);
             j++;
         }
-//        Collections.sort(l);
-
         int len = l.size();
         if (len % 2 == 1) {
             ret = Double.parseDouble(String.valueOf(l.get(len / 2)));
@@ -131,7 +125,6 @@ class Solution {
             int b = l.get(len / 2);
             ret = ((double) a + b) / 2;
         }
-
         return ret;
     }
 }
