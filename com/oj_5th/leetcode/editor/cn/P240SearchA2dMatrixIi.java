@@ -49,28 +49,76 @@ public class P240SearchA2dMatrixIi{
     public static void main(String[] args) {
         Solution solution = new P240SearchA2dMatrixIi().new Solution();
         // TO TEST
+        int[][] matrix = {{1,4,7,11,15},
+                          {2,5,8,12,19},
+                          {3,6,9,16,22},
+                          {10,13,14,17,24},
+                          {18,21,23,26,30}};
+        int target = 20;
+        System.out.println(solution.searchMatrix(matrix, target));
     }
     //[240] search-a-2d-matrix-ii
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
-    public boolean searchMatrix(int[][] matrix, int target) {
-
-        for(int i = 0; i < matrix.length && i>=0; ){
-            for(int j = 0; j < matrix[0].length && j>=0;){
-                if(matrix[i][j]==target){
+    public boolean searchMatrix2(int[][] matrix, int target) {
+        boolean ret = false;
+        for(int i = 0; i < matrix.length; i++){
+            for(int j = 0; j < matrix[0].length; j++){
+                if(target == matrix[i][j]){
                     return true;
-                }else if(matrix[i][j] < target && j+1 < matrix[0].length && matrix[i][j+1] <= target){//向右
-                    j++;
-                } else if(matrix[i][j] > target && i+1 < matrix.length && matrix[i+1][j] <= target){//向下
-                    i++;
-                }else{
-                    j--;
                 }
-                //向左
             }
         }
-        return false;
+        return ret;
     }
+
+        private boolean binarySearch(int[][] matrix, int target, int start, boolean vertical) {
+            int lo = start;
+            int hi = vertical ? matrix[0].length-1 : matrix.length-1;
+
+            while (hi >= lo) {
+                int mid = (lo + hi)/2;
+                if (vertical) { // searching a column
+                    if (matrix[start][mid] < target) {
+                        lo = mid + 1;
+                    } else if (matrix[start][mid] > target) {
+                        hi = mid - 1;
+                    } else {
+                        return true;
+                    }
+                } else { // searching a row
+                    if (matrix[mid][start] < target) {
+                        lo = mid + 1;
+                    } else if (matrix[mid][start] > target) {
+                        hi = mid - 1;
+                    } else {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        public boolean searchMatrix(int[][] matrix, int target) {
+            // an empty matrix obviously does not contain `target`
+            if (matrix == null || matrix.length == 0) {
+                return false;
+            }
+
+            // iterate over matrix diagonals
+            int shorterDim = Math.min(matrix.length, matrix[0].length);
+            for (int i = 0; i < shorterDim; i++) {
+                boolean verticalFound = binarySearch(matrix, target, i, true);
+                boolean horizontalFound = binarySearch(matrix, target, i, false);
+                if (verticalFound || horizontalFound) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
