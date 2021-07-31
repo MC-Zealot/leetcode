@@ -43,6 +43,10 @@
 
 
 package oj_5th.leetcode.editor.cn;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /*
 *   [206] reverse-linked-list
 *   2021-07-27 20:39:18
@@ -69,6 +73,7 @@ class Solution {
         if(head==null){
             return null;
         }
+
         List<Integer> list = new ArrayList<Integer>();
         while(head!=null){
             list.add(head.val);
