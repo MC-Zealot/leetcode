@@ -45,7 +45,9 @@
 
 package oj_5th.leetcode.editor.cn;
 
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /*
 *   [236] lowest-common-ancestor-of-a-binary-tree
@@ -69,19 +71,44 @@ public class P236LowestCommonAncestorOfABinaryTree{
  */
 class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        //找到2个路径，用list保存treenode
-        //然后找到分叉的位置
+        //队列保存节点
+        //遍历队列，节点中是否包含p和q
+        //使用dfs判断
+        Queue<TreeNode> queue = new LinkedList();
+        queue.add(root);
+        TreeNode ret =null;
+        while (queue.size()>0){
+            TreeNode node = queue.poll();
+            boolean flag = isContain(node,p,q);
+            if(flag==false){
+                continue;
+            }
+            ret = node;
+            queue.add(ret.left);
+            queue.add(ret.right);
+        }
+        return ret;
     }
-    public void dfs(TreeNode root, List<TreeNode> list, TreeNode target){
+    public boolean isContain(TreeNode root, TreeNode p, TreeNode q){
+        boolean ret= false;
+        boolean[] flags = new boolean[2];
+        dfs(root,p,q, flags);
+        if(flags[0]&& flags[1]){
+            ret = true;
+        }
+        return ret;
+    }
+    public void dfs(TreeNode root, TreeNode p, TreeNode q, boolean[] flags){
         if(root==null){
             return;
         }
-        list.add(root);
-        if(root.val==target.val){
-            return;
+        if(root.val==p.val){
+            flags[0]=true;
+        }else if(root.val==q.val){
+            flags[1]=true;
         }
-        dfs(root.left, list, target);
-        dfs(root.right, list, target);
+        dfs(root.left, p, q, flags);
+        dfs(root.right, p, q, flags);
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
