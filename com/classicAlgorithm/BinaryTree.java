@@ -216,25 +216,19 @@ public class BinaryTree {
 		}
 	}
 	public static void  inorderTraversal(TreeNode root) {
-		if(root!=null){
-			Stack<TreeNode> stack = new Stack<TreeNode>();
-			Set<TreeNode> set = new HashSet<TreeNode>();
-			stack.push(root);	
-			while(stack.size() != 0){
-				root = stack.peek();
-				if(root.left != null && !set.contains(root.left)){
-					stack.push(root.left);	
-					root = root.left;
-					continue;
-				}
-				TreeNode node = stack.pop();
-				set.add(node);
-				visit(node);
-				if(root.right != null && !set.contains(root.right)){
-					stack.push(root.right);	
-				}
-			}
-		}
+	    Stack<TreeNode> stack = new Stack<TreeNode>();
+            List<Integer> res = new ArrayList<Integer>();
+
+            while(root != null || !stack.isEmpty()){
+            	while(root!=null){       // 不断地向左结点深入，直至叶子结点
+               	    stack.push(root);
+                    root = root.left;
+            	}
+            	TreeNode top = stack.pop();
+            	res.add(top.val);
+            	root = top.right;
+            }	
+            return res;
 	}
 	private static  TreeNode init() {
 		TreeNode root = new TreeNode(1);
